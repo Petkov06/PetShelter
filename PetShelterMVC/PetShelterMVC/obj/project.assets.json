@@ -8,19 +8,24 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\student\\.nuget\\packages\\": {}
+    "C:\\Users\\kp\\.nuget\\packages\\": {},
+    "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelterMVC\\PetShelterMVC.csproj",
+      "projectUniqueName": "E:\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelterMVC\\PetShelterMVC.csproj",
       "projectName": "PetShelterMVC",
-      "projectPath": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelterMVC\\PetShelterMVC.csproj",
-      "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-      "outputPath": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelterMVC\\obj\\",
+      "projectPath": "E:\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelterMVC\\PetShelterMVC.csproj",
+      "packagesPath": "C:\\Users\\kp\\.nuget\\packages\\",
+      "outputPath": "E:\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelterMVC\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -40,6 +45,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -51,7 +61,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -63,7 +74,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
