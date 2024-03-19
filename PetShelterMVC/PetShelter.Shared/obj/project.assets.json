@@ -257,11 +257,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\kristian11g\\softwareDevelopment\\PetShelter\\PetShelterMVC\\PetShelter.Shared\\PetShelter.Shared.csproj",
+      "projectUniqueName": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelter.Shared\\PetShelter.Shared.csproj",
       "projectName": "PetShelter.Shared",
-      "projectPath": "D:\\kristian11g\\softwareDevelopment\\PetShelter\\PetShelterMVC\\PetShelter.Shared\\PetShelter.Shared.csproj",
+      "projectPath": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelter.Shared\\PetShelter.Shared.csproj",
       "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-      "outputPath": "D:\\kristian11g\\softwareDevelopment\\PetShelter\\PetShelterMVC\\PetShelter.Shared\\obj\\",
+      "outputPath": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelter.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",

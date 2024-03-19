@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\kristian11g\\softwareDevelopment\\PetShelter\\PetShelterMVC\\PetShelterMVC\\PetShelterMVC.csproj": {}
+    "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelterMVC\\PetShelterMVC.csproj": {}
   },
   "projects": {
-    "D:\\kristian11g\\softwareDevelopment\\PetShelter\\PetShelterMVC\\PetShelterMVC\\PetShelterMVC.csproj": {
+    "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelterMVC\\PetShelterMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\kristian11g\\softwareDevelopment\\PetShelter\\PetShelterMVC\\PetShelterMVC\\PetShelterMVC.csproj",
+        "projectUniqueName": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelterMVC\\PetShelterMVC.csproj",
         "projectName": "PetShelterMVC",
-        "projectPath": "D:\\kristian11g\\softwareDevelopment\\PetShelter\\PetShelterMVC\\PetShelterMVC\\PetShelterMVC.csproj",
+        "projectPath": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelterMVC\\PetShelterMVC.csproj",
         "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-        "outputPath": "D:\\kristian11g\\softwareDevelopment\\PetShelter\\PetShelterMVC\\PetShelterMVC\\obj\\",
+        "outputPath": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelterMVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",

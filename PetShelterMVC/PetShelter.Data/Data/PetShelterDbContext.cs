@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 
 namespace PetShelter.Data.Data
 {
-    public class PetShelterDbContext : DbContext
+    public class PetShelterDbContext
+        //: DbContext
     {
-        public PetShelterDbContext(DbContextOptions<PetShelterDbContext> options) : base(options)
-        {
+        //public PetShelterDbContext(DbContextOptions<PetShelterDbContext> options) : base(options)
+        //{
 
-        }
+        //}
 
-        public DbSet<User> Users { get; set; }
+        //public DbSet<User> Users { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseLazyLoadingProxies();
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    base.OnConfiguring(optionsBuilder);
+        //    optionsBuilder.UseLazyLoadingProxies();
+        //}
     }
 }
