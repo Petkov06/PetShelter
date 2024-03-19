@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PetShelter.Data.Entities;
+//using PetShelter.Shared.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;                                                                                                                                                                       
+using System.Threading.Tasks;
 
 namespace PetShelter.Data.Data
 {
@@ -36,6 +37,12 @@ namespace PetShelter.Data.Data
 
             modelBuilder.Entity<Shelter>().HasOne(a => a.Location).WithOne(a => a.Shelter).HasForeignKey<Location>(c => c.ShelterId);
 
+            //foreach (var role in Enum.GetValues(typeof(UserRole)).Cast<UserRole>())
+            //{
+            //    modelBuilder.Entity<Role>().HasData(new Role { Id = (int)role, Name = role.ToString() });
+            //}
+
         }
+        
     }
 }
