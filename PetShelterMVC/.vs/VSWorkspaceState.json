@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PetShelter.Data",
+    "\\PetShelter.Data\\Data",
+    "\\PetShelter.Data\\Entities",
+    "\\PetShelter.Shared",
+    "\\PetShelter.Shared\\Enums"
   ],
-  "SelectedNode": "\\PetShelterMVC.sln",
+  "SelectedNode": "\\PetShelter.Data\\Data\\PetShelterDbContext.cs",
   "PreviewInSolutionExplorer": false
 }
