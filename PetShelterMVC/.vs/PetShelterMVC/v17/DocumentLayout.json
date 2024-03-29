@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BD11195D-C1CD-42AA-A70C-739558B498B3}|PetShelter.Data\\PetShelter.Data.csproj|d:\\kristian11g\\softwaredevelopment\\projects\\petshelter\\petsheltermvc\\petshelter.data\\data\\repos\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD11195D-C1CD-42AA-A70C-739558B498B3}|PetShelter.Data\\PetShelter.Data.csproj|solutionrelative:petshelter.data\\data\\repos\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7ABE38AE-300E-41EE-86F0-15FB5E312A99}|PetShelter.Shared\\PetShelter.Shared.csproj|d:\\kristian11g\\softwaredevelopment\\projects\\petshelter\\petsheltermvc\\petshelter.shared\\dtos\\breeddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7ABE38AE-300E-41EE-86F0-15FB5E312A99}|PetShelter.Shared\\PetShelter.Shared.csproj|solutionrelative:petshelter.shared\\dtos\\breeddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelter.Data\\Data\\Repos\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "PetShelter.Data\\Data\\Repos\\BaseRepository.cs",
+              "ToolTip": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelter.Data\\Data\\Repos\\BaseRepository.cs",
+              "RelativeToolTip": "PetShelter.Data\\Data\\Repos\\BaseRepository.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABEAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T07:09:00.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BreedDto.cs",
+              "DocumentMoniker": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelter.Shared\\Dtos\\BreedDto.cs",
+              "RelativeDocumentMoniker": "PetShelter.Shared\\Dtos\\BreedDto.cs",
+              "ToolTip": "D:\\kristian11g\\softwareDevelopment\\PROJECTs\\PetShelter\\PetShelterMVC\\PetShelter.Shared\\Dtos\\BreedDto.cs",
+              "RelativeToolTip": "PetShelter.Shared\\Dtos\\BreedDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T06:30:01.577Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

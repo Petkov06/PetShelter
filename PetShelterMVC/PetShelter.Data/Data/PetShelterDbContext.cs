@@ -17,6 +17,18 @@ namespace PetShelter.Data.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Vaccine> Vaccine { get; set; }
+        public DbSet<Shelter> Shelter { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<PetVaccine> PetVaccine { get; set; }
+        public DbSet<PetType> PetType { get; set; }
+        public DbSet<Pet> Pet { get; set; }
+        public DbSet<Location> Location { get; set; }
+        public DbSet<Breed> Breed { get; set; }
+        public DbSet<BaseEntity> BaseEntity { get; set; }
+
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

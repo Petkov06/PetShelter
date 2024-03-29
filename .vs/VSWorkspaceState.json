@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PetShelterMVC",
+    "\\PetShelterMVC\\PetShelter.Shared",
+    "\\PetShelterMVC\\PetShelter.Shared\\Repos",
+    "\\PetShelterMVC\\PetShelter.Shared\\Repos\\Contracts"
   ],
+  "SelectedNode": "\\PetShelterMVC\\PetShelter.Shared\\Repos\\Contracts\\IBaseRepository.cs",
   "PreviewInSolutionExplorer": false
 }
