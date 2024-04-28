@@ -23,6 +23,6 @@ namespace PetShelter.Shared.Repos.Contracts
         Task<bool>  ExistsByIdAsync(int id);
 
         Task<IEnumerable<TModel>> GetWithPaginationAsync(int pageSize, int pageNumber);
-        Task<async> SaveAsync(TModel model);
+
     }
 }

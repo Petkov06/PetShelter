@@ -118,16 +118,10 @@ namespace PetShelter.Data.Data.Repos
             if (model == null)
             {
                 throw new ArgumentNullException(nameof(model));
-
-
-
         }
             if (model.Id != 0)
             {
                 await UpdateAsync(model);
-
-
-
         }
             else
             {
@@ -135,11 +129,11 @@ namespace PetShelter.Data.Data.Repos
             }
         }
 
-        public async Task DeleteAsync(TModel model)
+        public async Task DeleteAsync(TModel model, int id)
         {
             var entity = await this._dbSet.FindAsync(id);
 
-            if (entity = null)
+            if (entity == null)
             {
                 throw new ArgumentNullException(nameof(entity));
             }
@@ -197,5 +191,7 @@ namespace PetShelter.Data.Data.Repos
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
+
+        
     }
 }

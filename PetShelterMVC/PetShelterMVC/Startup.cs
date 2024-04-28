@@ -1,9 +1,11 @@
+using Autofac.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PetShelter.Data.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,5 +55,26 @@ namespace PetShelterMVC
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+
+        //services.Services.AddControllerWithViews();
+        //services.Services.AddDbContext<PetShelterDbContext>(options => 
+            
+        //  options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"])
+
+
+
+
+
     }
 }
