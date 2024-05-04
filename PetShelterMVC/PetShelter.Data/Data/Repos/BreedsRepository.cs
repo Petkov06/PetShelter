@@ -8,9 +8,9 @@ using System;
 
 
 [AutoBind]
-public class BreedRepository : BaseRepository<Breed,BreedDto>,IBreedRepository
+public class BreedsRepository : BaseRepository<Breed, BreedDto>, IBreedRepository
 {
-	public BreedRepository(PetShelterDbContext context, IMapper mapper):base(context, mapper)
+	public BreedsRepository(PetShelterDbContext context, IMapper mapper):base(context, mapper)
 	{
 	}
 }

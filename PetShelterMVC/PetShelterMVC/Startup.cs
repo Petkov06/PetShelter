@@ -61,20 +61,24 @@ namespace PetShelterMVC
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
+
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+    
 
         //services.Services.AddControllerWithViews();
         //services.Services.AddDbContext<PetShelterDbContext>(options => 
-            
-        //  options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"])
+        //    {
 
-
-
-
-
-    }
+        //  options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]);
+        //  });
+    //    using (var scope = App.Services.CreateScope())
+    //    {
+    //    var context = scope.ServiceProvider.GetRequieredService<PetShelterDbContext>();
+    //context.Database.Migrate();
+    //    }
+    }   
 }
