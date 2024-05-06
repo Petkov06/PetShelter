@@ -10,4 +10,8 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.5.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PetShelter.Shared\PetShelter.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
