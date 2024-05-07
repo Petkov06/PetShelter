@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PetShelter.Data.Entities;
 using PetShelter.Shared.Enums;
-
+using PetShelter.Shared.Security;
 //using PetShelter.Shared.Enums;
 using System;
 using System.Collections.Generic;
@@ -30,13 +30,8 @@ namespace PetShelter.Data.Data
         public DbSet<Pet> Pet { get; set; }
         public DbSet<Location> Location { get; set; }
         public DbSet<Breed> Breed { get; set; }
-        public DbSet<BaseEntity> BaseEntity { get; set; }
-
-
-
-
        
-
+     
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -1,8 +1,11 @@
 ﻿using System;
 
-public class AutoBindAttribute : Attribute
+namespace PetShelter.Shared.Attributes
 {
-	public AutoBindAttribute()
+	public class AutoBindAttribute : Attribute
 	{
+		public AutoBindAttribute()
+		{
+		}
 	}
 }

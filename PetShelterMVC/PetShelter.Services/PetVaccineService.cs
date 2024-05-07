@@ -8,14 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetShelter.Services
+namespace PetShelter.Services.ViewModels
 {
+
     [AutoBind]
-    public class BreedsService : BaseCrudService<BreedDto, IBreedRepository>, IBreedsService
+    public class PetsVaccineService : BaseCrudService<PetVaccineDto, IPetVaccineRepository>, IPetVaccinesService
     {
-        public BreedsService(IBreedRepository repository) : base(repository)
+        public PetsVaccineService(IPetVaccineRepository repository) : base(repository)
         {
 
         }
     }
+
 }

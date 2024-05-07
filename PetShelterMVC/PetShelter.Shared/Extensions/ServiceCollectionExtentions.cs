@@ -1,16 +1,20 @@
 using Microsoft.Extensions.DependencyInjection;
+using PetShelter.Shared.Attributes;
 using System;
 using System.Reflection;
 
-public static class ServiceCollectionExtentions
+namespace PetShelter.Shared.Extensions
 {
-	
-	public static void AutoBund(this IServiceCollection source, params Assembly[] assmblies)
+	public static class ServiceCollectionExtentions
 	{
-		source.Scan(scan => scan.FromAssemblies(assmblies)
-		.AddClasses(classes => classes.WithAttribute<AutoBindAttribute>())
-		.AsImplementedInterfaces()
-		.WithScopedLifetime());
-		
-    }
+
+		public static void AutoBind(this IServiceCollection source, params Assembly[] assmblies)
+		{
+			source.Scan(scan => scan.FromAssemblies(assmblies)
+			.AddClasses(classes => classes.WithAttribute<AutoBindAttribute>())
+			.AsImplementedInterfaces()
+			.WithScopedLifetime());
+
+		}
+	}
 }

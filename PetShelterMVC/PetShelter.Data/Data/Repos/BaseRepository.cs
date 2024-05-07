@@ -129,7 +129,7 @@ namespace PetShelter.Data.Data.Repos
             }
         }
 
-        public async Task DeleteAsync(TModel model, int id)
+        public async Task DeleteAsync( int id)
         {
             var entity = await this._dbSet.FindAsync(id);
 
@@ -146,12 +146,12 @@ namespace PetShelter.Data.Data.Repos
             catch (SqlException ex)
             {
                 //Here we can save these errors in some logs or telemetery
-                await Console.Out.WriteLineAsync($"The system threw an sql exception trying to create {nameof(model)}: {ex.Message}");
+                await Console.Out.WriteLineAsync($"The system threw an sql exception trying to create {nameof(entity)}: {ex.Message}");
             }
             catch (Exception ex)
             {
                 //Here we can save these errors in some logs or telemetery
-                await Console.Out.WriteLineAsync($"The system threw a non-sql exception trying to create {nameof(model)}: {ex.Message}");
+                await Console.Out.WriteLineAsync($"The system threw a non-sql exception trying to create {nameof(entity)}: {ex.Message}");
             }
         }
 
