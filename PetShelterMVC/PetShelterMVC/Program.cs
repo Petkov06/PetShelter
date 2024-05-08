@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PetShelter.Services.ViewModels;
 using PetShelter.Shared.Extensions;
+using PetShelterMVC;
 
 internal class Program
 {

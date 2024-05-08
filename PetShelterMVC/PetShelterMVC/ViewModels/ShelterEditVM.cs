@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PetShelter.Services.ViewModels
 {
-    public class UserEditVM : BaseVM
+    public class ShelterEditVM : BaseVM
     {
         [Required]
         public string Name { get; set; }
