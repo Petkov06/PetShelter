@@ -8,5 +8,6 @@ namespace PetShelter.Services.ViewModels
 {
     public class BaseVM
     {
+
     }
 }

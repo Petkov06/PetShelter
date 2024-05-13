@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace PetShelter.Shared.Repos.Contracts
 {
     public interface ILocationRepository : IBaseRepository<LocationDto>
-    { 
+    {
+        List<LocationDto> GetAllActiveAsync();
     }
 }

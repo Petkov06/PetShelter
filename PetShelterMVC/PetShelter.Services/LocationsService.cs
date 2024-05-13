@@ -10,14 +10,19 @@ using System.Threading.Tasks;
 
 namespace PetShelter.Services.ViewModels
 {
-    
-        [AutoBind]
-        public class LocationsService : BaseCrudService<LocationDto, ILocationRepository>, ILocationsService
-        {
-            public LocationsService(ILocationRepository repository) : base(repository)
-            {
 
-            }
+    [AutoBind]
+    public class LocationsService : BaseCrudService<LocationDto, ILocationRepository>, ILocationsService
+    {
+        public LocationsService(ILocationRepository repository) : base(repository)
+        {
+
         }
-    
+
+        public List<LocationDto> GetAllActiveAsync()
+        {
+            return _repository.GetAllActiveAsync();  
+        }
+    }
+
 }

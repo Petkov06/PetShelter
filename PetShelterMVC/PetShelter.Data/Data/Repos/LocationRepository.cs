@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using PetShelter.Data.Data;
 using PetShelter.Data.Data.Repos;
 using PetShelter.Data.Entities;
@@ -16,5 +20,10 @@ public class LocationRepository : BaseRepository<Location, LocationDto>, ILocati
 	public LocationRepository(PetShelterDbContext context, IMapper mapper) : base(context, mapper)
 	{
 	}
+
+    public async Task<List<LocationDto>> GetAllActiveAsync()
+    {
+        return await _dbSet.Where(l=>l.ShelterId==null).ToListAsync();
+    }
 }
 

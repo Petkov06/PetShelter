@@ -1,6 +1,8 @@
-﻿using PetShelter.Shared.Enums;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using PetShelter.Shared.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -11,9 +13,11 @@ namespace PetShelter.Services.ViewModels
     public class ShelterEditVM : BaseVM
     {
         [Required]
-        public string Name { get; set; }
+        public int PetCapacity { get; set; }
 
         [Required]
-        public BreedSize Size { get; set; }
+        [DisplayName("Location")]
+        public int LocationId { get; set; }
+        public IEnumerable<SelectListItem> LocationList { get; set; }
     }
 }

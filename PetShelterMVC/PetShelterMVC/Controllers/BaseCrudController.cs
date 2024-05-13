@@ -15,23 +15,23 @@ namespace PetShelterMVC.Controllers
         where TModel : BaseModel
         where TRepository : IBaseRepository<TModel>
         where TService : IBaseCrudService<TModel, TRepository>
-        where TEditVM : BaseModel, new()
+        where TEditVM : BaseVM, new()
         where TDetailsVM : BaseVM
     {
         protected readonly TService _service;
         protected readonly IMapper _mapper;
 
-        protected BaseCrudController(TService service, IMapper _mapper)
+        protected BaseCrudController(TService service, IMapper mapper)
         {
             this._service = service;
-            _mapper = _mapper;
+            _mapper = mapper;
         }
 
         protected const int DefaultPageSize = 10;
         protected const int DefaultPageNumber = 1;
         protected const int MaxPageSize = 100;
 
-        public virtual Task<string?> Valdiate(TEditVM editVM)
+        public virtual Task<string?> Validate(TEditVM editVM)
         {
             return Task.FromResult<string?>(null);
         }
@@ -78,7 +78,7 @@ namespace PetShelterMVC.Controllers
         [HttpPost]
         public virtual async Task<IActionResult> Create(TEditVM editVM)
         {
-            var errors = await Valdiate(editVM);
+            var errors = await Validate(editVM);
             if (errors != null)
             {
                 return View(editVM);
@@ -102,6 +102,46 @@ namespace PetShelterMVC.Controllers
             var mappedModel = _mapper.Map<TEditVM>(model);
             return View(mappedModel);
         }
-
+        [HttpPost]  
+        public virtual async Task<IActionResult> Edit(int id, TEditVM editVM)
+        {
+            var errors = await Validate(editVM);
+            if (errors != null)
+            {
+                return View(editVM);
+            }
+            if (!await this._service.ExistsByIdAsync(id))
+            {
+                return BadRequest(Constants.InvalidId);
+            }
+            var mappedModel = _mapper.Map<TModel>(editVM);
+            await this._service.SaveAsync(mappedModel);
+            return await List();
+        }
+        [HttpGet]
+        public virtual async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest(Constants.InvalidId);
+            }
+            var model = await this._service.GetByIdIfExistsAsync(id.Value);
+            if (model == default)
+            {
+                return BadRequest(Constants.InvalidId);
+            }
+            var mappedModel = _mapper.Map<TDetailsVM>(model);
+            return View(mappedModel);
+        }
+        [HttpPost]
+        public virtual async Task<IActionResult> Delete(int id)
+        {
+            if(!await this._service.ExistsByIdAsync(id))
+            {
+                return BadRequest(Constants.InvalidId);
+            }
+            await this._service.DeleteAsync(id);
+            return await List();
+        }
     }
 }
