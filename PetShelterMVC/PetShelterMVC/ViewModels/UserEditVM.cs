@@ -1,4 +1,6 @@
-﻿using PetShelter.Shared.Enums;
+﻿using PetShelter.Data.Entities;
+using PetShelter.Shared.Dtos;
+using PetShelter.Shared.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,9 +13,23 @@ namespace PetShelter.Services.ViewModels
     public class UserEditVM : BaseVM
     {
         [Required]
-        public string Name { get; set; }
+        public string Username { get; set; }
 
         [Required]
-        public BreedSize Size { get; set; }
+        public string Password { get; set; }
+
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+
+        [Required]
+        public int? RoleId { get; set; }
+
+
+        [Required]
+        public int? ShelterId { get; set; }
+
     }
 }

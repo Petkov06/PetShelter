@@ -13,7 +13,6 @@ namespace PetShelter.Services.ViewModels
         [Required]
         public string Name { get; set; }
 
-        [Required]
-        public BreedSize Size { get; set; }
+       
     }
 }

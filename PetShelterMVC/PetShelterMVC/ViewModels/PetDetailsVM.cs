@@ -1,4 +1,5 @@
-﻿using PetShelter.Shared.Enums;
+﻿using PetShelter.Data.Entities;
+using PetShelter.Shared.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,10 +11,33 @@ namespace PetShelter.Services.ViewModels
 {
     public class PetDetailsVM : BaseVM
     {
-        [Required]
+        public PetDetailsVM() 
+        {
+            this.PetVaccines = new List<PetVaccineDetailsVM>();
+        }
         public string Name { get; set; }
 
-        [Required]
-        public BreedSize Size { get; set; }
+        public int Age { get; set; }
+
+        public string Color { get; set; }
+
+        public bool IsAdopted { get; set; }
+
+        public bool IsEuthanized { get; set; }
+
+        public int PetTypeId { get; set; }
+
+        public int BreedId { get; set; }
+
+
+        public int? AdopterId { get; set; }
+
+        public int? GiverId { get; set; }
+
+
+        public int? ShelterId { get; set; }
+
+
+        public virtual List<PetVaccineDetailsVM> PetVaccines { get; set; }
     }
 }

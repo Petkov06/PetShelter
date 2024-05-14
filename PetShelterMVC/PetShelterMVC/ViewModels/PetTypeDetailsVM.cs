@@ -1,4 +1,5 @@
-﻿using PetShelter.Shared.Enums;
+﻿using PetShelter.Shared.Dtos;
+using PetShelter.Shared.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,10 +11,13 @@ namespace PetShelter.Services.ViewModels
 {
     public class PetTypeDetailsVM : BaseVM
     {
-        [Required]
+        public PetTypeDetailsVM()
+        {
+            this.Pets = new List<PetTypeDetailsVM>();
+        }
+
         public string Name { get; set; }
 
-        [Required]
-        public BreedSize Size { get; set; }
+        public List<PetTypeDetailsVM> Pets { get; set; }
     }
 }

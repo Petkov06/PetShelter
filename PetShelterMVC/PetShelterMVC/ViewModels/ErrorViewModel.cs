@@ -11,9 +11,12 @@ namespace PetShelter.Services.ViewModels
     public class ErrorViewModel : BaseVM
     {
         [Required]
-        public string Name { get; set; }
-
+        public string Username { get; set; }
         [Required]
-        public BreedSize Size { get; set; }
+        public string Password { get; set; }
+        [Required]
+        public string NewPassword { get; set; }
+
+       
     }
 }
