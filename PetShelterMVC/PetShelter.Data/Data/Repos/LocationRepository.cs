@@ -21,9 +21,9 @@ public class LocationRepository : BaseRepository<Location, LocationDto>, ILocati
 	{
 	}
 
-    public async Task<List<LocationDto>> GetAllActiveAsync()
+    public async Task<IEnumerable<LocationDto>> GetAllActiveAsync()
     {
-        return await _dbSet.Where(l=>l.ShelterId==null).ToListAsync();
+        return MapToEnumerableOfModel(await _dbSet.Where(l => l.ShelterId == null).ToListAsync());
     }
 }
 

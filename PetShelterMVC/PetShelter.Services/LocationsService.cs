@@ -19,7 +19,7 @@ namespace PetShelter.Services.ViewModels
 
         }
 
-        public List<LocationDto> GetAllActiveAsync()
+        public Task<IEnumerable<LocationDto>> GetAllActiveAsync()
         {
             return _repository.GetAllActiveAsync();  
         }

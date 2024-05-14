@@ -1,4 +1,5 @@
-﻿using PetShelter.Shared.Enums;
+﻿using PetShelter.Data.Entities;
+using PetShelter.Shared.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,9 +12,13 @@ namespace PetShelter.Services.ViewModels
     public class LocationDetailsVM : BaseVM
     {
         [Required]
-        public string Name { get; set; }
-
+        public string City { get; set; }
         [Required]
-        public BreedSize Size { get; set; }
+        public string Address { get; set; }
+        [Required]
+        public string Country { get; set; }
+        [Required]
+        public int? ShelterId { get; set; }
+        
     }
 }
