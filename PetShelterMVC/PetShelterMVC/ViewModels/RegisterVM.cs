@@ -11,9 +11,13 @@ namespace PetShelter.Services.ViewModels
     public class RegisterVM : BaseVM
     {
         [Required]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
+        [Required]
+        public string Username { get; set; }
 
         [Required]
-        public BreedSize Size { get; set; }
+        public string Password { get; set; }
     }
 }

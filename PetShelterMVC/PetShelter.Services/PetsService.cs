@@ -10,14 +10,22 @@ using System.Threading.Tasks;
 
 namespace PetShelter.Services
 {
-    
-        [AutoBind]
-        public class PetsService : BaseCrudService<PetDto, IPetRepository>, IPetsService
-        {
-            public PetsService(IPetRepository repository) : base(repository)
-            {
 
-            }
+    [AutoBind]
+    public class PetsService : BaseCrudService<PetDto, IPetRepository>, IPetsService
+    {
+        public PetsService(IPetRepository repository) : base(repository)
+        {
+
         }
-    
+
+        public async Task GivePetAsync(int userId, PetDto pet)
+        {
+        }
+        public async Task AdoptPetAsync(int userId, int petId)
+        {
+
+        }
+    }
+
 }

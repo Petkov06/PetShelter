@@ -14,8 +14,8 @@ namespace PetShelter.Services.ViewModels
     {
         public UserDetailsVM()
         {
-            this.AdoptedPets = new List<PetDto>();
-            this.GivenPets = new List<PetDto>();
+            this.AdoptedPets = new List<PetDetailsVM>();
+            this.GivenPets = new List<PetDetailsVM>();
 
         }
 
@@ -50,7 +50,7 @@ namespace PetShelter.Services.ViewModels
         
 
         [Required]
-        public UserRole Size { get; set; }
+        public UserRole UserRole { get; set; }
 
        
        

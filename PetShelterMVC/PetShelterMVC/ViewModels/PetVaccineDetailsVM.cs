@@ -11,9 +11,9 @@ namespace PetShelter.Services.ViewModels
     public class PetVaccineDetailsVM : BaseVM
     {
         [Required]
-        public string Name { get; set; }
+        public int PetId { get; set; }
 
         [Required]
-        public BreedSize Size { get; set; }
+        public int VaccineId { get; set; }
     }
 }

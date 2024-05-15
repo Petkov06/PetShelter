@@ -11,5 +11,6 @@ namespace PetShelter.Shared.Repos.Contracts
     public interface IUserRepository : IBaseRepository<UserDto>
     {
         public Task<UserDto> GetByUsernameAsync(string username);
+        public  Task<bool> CanUserLoginAsync(string username, string password);
     }
 }

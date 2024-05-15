@@ -1,0 +1,50 @@
+﻿namespace PetShelterMVC.Views.ShelterDetailsVM
+{
+    public class Details
+    {
+    }
+}
+
+
+@model PetShelter.Web.ViewModels.BreedDetailsVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PetCapacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PetCapacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pets.Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationId)
+        </dt>
+
+        <dd>
+            @Html.ActionLink("Loaction Details", "Details", "Location", new { id = Model.LocationId })
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new string { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "List")
+</p>

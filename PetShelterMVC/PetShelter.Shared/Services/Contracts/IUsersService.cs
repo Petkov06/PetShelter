@@ -13,5 +13,6 @@ namespace PetShelter.Shared.Services.Contracts
 
     {
         public Task<UserDto> GetByUsernameAsync(string username);
+        public Task<bool> CanUserLoginAsync(string username, string password);
     }
 }

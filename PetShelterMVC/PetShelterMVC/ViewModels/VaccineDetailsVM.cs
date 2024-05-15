@@ -12,8 +12,9 @@ namespace PetShelter.Services.ViewModels
     {
         [Required]
         public string Name { get; set; }
-
         [Required]
-        public BreedSize Size { get; set; }
+        public string Description { get; set; }
+
+        public virtual List<PetVaccineDetailsVM> PetVaccines { get; set; }
     }
 }
