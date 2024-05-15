@@ -6,6 +6,8 @@ using PetShelter.Data.Entities;
 using PetShelter.Shared.Dtos;
 using PetShelter.Shared.Repos.Contracts;
 using PetShelter.Shared.Attributes;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 
 [AutoBind]
@@ -13,5 +15,11 @@ public class UserRepository : BaseRepository<User, UserDto>, IUserRepository
 {
 	public UserRepository(PetShelterDbContext context, IMapper mapper) : base(context, mapper)
 	{
+
 	}
+    public async Task<UserDto> GetByUsernameAsync(string username)
+    {
+        return MapToModel(await _dbSet.FirstOrDefaultAsync(u => u.Username == username));
+
+    }
 }

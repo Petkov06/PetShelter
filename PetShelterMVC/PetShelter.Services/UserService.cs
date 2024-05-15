@@ -8,16 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetShelter.Services.ViewModels
+namespace PetShelter.Services
 {
-    
-        [AutoBind]
-        public class UserService : BaseCrudService<UserDto, IUserRepository>, IUsersService
-    {
-            public UserService(IUserRepository repository) : base(repository)
-            {
 
-            }
+    [AutoBind]
+    public class UserService : BaseCrudService<UserDto, IUserRepository>, IUsersService
+    {
+        public UserService(IUserRepository repository) : base(repository)
+        {
+
         }
-    
+        public async Task<UserDto> GetByUsernameAsync(string username)
+        {
+            return await _repository.GetByUsernameAsync(username);
+        }
+    }
+
 }

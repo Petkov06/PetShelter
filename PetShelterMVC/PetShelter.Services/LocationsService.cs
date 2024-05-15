@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetShelter.Services.ViewModels
+namespace PetShelter.Services
 {
 
     [AutoBind]

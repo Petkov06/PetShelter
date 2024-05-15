@@ -11,5 +11,6 @@ namespace PetShelter.Shared
         public static readonly string UserNotFound = "User does not exist. \n";
         public static readonly string InvalidPagination = "Out-of-range page requests. \n";
         public static readonly string InvalidId = "Invalid ID value \n";
+        public static readonly string InvalidCredentials = "Invalid Credentials \n";
     }
 }
