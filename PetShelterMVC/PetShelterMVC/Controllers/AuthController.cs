@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
-using PetShelter.Services.ViewModels;
 using PetShelter.Shared;
 using PetShelter.Shared.Dtos;
 using PetShelter.Shared.Enums;
@@ -10,6 +9,7 @@ using PetShelter.Shared.Services.Contracts;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using PetShelter.Shared.Security;
+using PetShelterMVC.ViewModels;
 
 namespace PetShelterMVC.Controllers
 {

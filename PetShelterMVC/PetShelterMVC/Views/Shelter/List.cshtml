@@ -1,20 +1,17 @@
-﻿@model IEnumerable<PetShelterMVC.ViewModels.BreedDetailsVM>
+﻿@model IEnumerable<PetShelterMVC.ViewModels.ShelterDetailsVM>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "List";
 }
 
-<h2>index</h2>
+<h2>Index</h2>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Size)
+            @Html.DisplayNameFor(model => model.PetCapacity)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Pets)
@@ -25,13 +22,10 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.PetCapacity)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Size)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pets)
+                @Html.DisplayFor(modelItem => item.Pets.Count)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
@@ -40,4 +34,5 @@
             </td>
         </tr>
     }
+
 </table>

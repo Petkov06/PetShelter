@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetShelter.Services.ViewModels
+namespace PetShelterMVC.ViewModels
 {
     public class ShelterEditVM : BaseVM
     {
         [Required]
         public int PetCapacity { get; set; }
-
+        [
         [Required]
         [DisplayName("Location")]
         public int LocationId { get; set; }

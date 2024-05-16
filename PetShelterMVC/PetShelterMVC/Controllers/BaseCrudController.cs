@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using PetShelter.Services.ViewModels;
+using PetShelterMVC.ViewModels;
 using PetShelter.Shared;
 using PetShelter.Shared.Dtos;
 using PetShelter.Shared.Repos.Contracts;

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetShelter.Services.ViewModels
+namespace PetShelterMVC.ViewModels
 {
     public class ShelterDetailsVM : BaseVM
     {
@@ -17,6 +17,7 @@ namespace PetShelter.Services.ViewModels
         }
         public int PetCapacity { get; set; }
         public int LocationId { get; set; }
+        public int Id { get; set; }
         public List<UserDetailsVM> Employees { get; set; }
         public List<PetDetailsVM> Pets { get; set; }
     }

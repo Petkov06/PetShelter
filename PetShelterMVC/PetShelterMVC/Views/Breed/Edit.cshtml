@@ -1,4 +1,4 @@
-﻿@model PetShelterMVC.ViewModels.ShelterEditVM
+﻿@model PetShelterMVC.ViewModels.BreedEditVM
 
 @{ ViewBag.Title = "Edit"; }
 
@@ -6,26 +6,25 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
     <div class="form-horizontal">
         <h4>Product</h4>
         <hr />
         @Html.ValidationSummary(true)
-        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model=> model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model =>model.PetCapacity ,new {@class ="control-label col-md 2" })
+            @Html.LabelFor(model.Name,new{@class ="control-label col-md 2" })
             <div> class="col-md-10"
-                @Html.EditorFor(model => model.PetCapacity)
-                @Html.ValidationMessageFor(model => model.PetCapacity)
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.LocationId, new { @class = "control-label col-md 2" })
+        <div class="forn-group">
+            @Html.LabelFor(model.Name, new { @class = "control-label col-md 2" })
             <div> class="col-md-10"
-                @Html.DropDownListFor(model=>model.LocationId, Model.LocationsList, "Choose a location...", new{ @class = "form-control"})
-                @Html.ValidationMessageFor(model => model.LocationId)
+                @Html.EditorFor(model=>model.Size)
+                @Html.ValidationMessageFor(model => model.Size)
         </div>
 
         <div class="form-group">
