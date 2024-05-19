@@ -1,4 +1,5 @@
-﻿using PetShelter.Shared.Enums;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using PetShelter.Shared.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -25,7 +26,7 @@ namespace PetShelterMVC.ViewModels
         [Required]
 
         public int BreedId { get; set; }
-
+       
         [Required]
 
         public int? AdopterId { get; set; }
@@ -36,5 +37,9 @@ namespace PetShelterMVC.ViewModels
         [Required]
 
         public int? ShelterId { get; set; }
+
+        public IEnumerable<SelectListItem> PetTypeList { get; set; }
+
+        public IEnumerable<SelectListItem> BreedList { get; set; }
     }
 }

@@ -23,6 +23,8 @@ namespace PetShelter.Services
             await this._repository.SaveAsync(model);
         }
 
+        //add get all method!!!
+
         public virtual Task DeleteAsync(int id) 
         => this._repository.DeleteAsync(id);
 
