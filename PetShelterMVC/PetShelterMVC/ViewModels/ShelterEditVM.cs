@@ -14,7 +14,7 @@ namespace PetShelterMVC.ViewModels
     {
         [Required]
         public int PetCapacity { get; set; }
-        [
+        
         [Required]
         [DisplayName("Location")]
         public int LocationId { get; set; }
