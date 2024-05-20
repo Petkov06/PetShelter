@@ -18,16 +18,12 @@ namespace PetShelterMVC.Controllers
         {
 
         }
-        //public async Task<UserDto> GetByUsernameAsync(string username)
-        //{
-        //    return await _service.GetByUsernameAsync(username);
-        //}
-        //public async Task GivePetAsync(int userId, PetDto pet)
-        //{
-            
-        //        return await _service.GetByUsernameAsync();
+        public async Task<UserDto> GetByUsernameAsync(string username)
+        {
+            return await _service.GetByUsernameAsync(username);
+        }
 
-        //}
+
 
     }
 }

@@ -12,6 +12,7 @@ namespace PetShelter.Shared.Services.Contracts
         where TModel : BaseModel
         where TRepository : IBaseRepository<TModel>
     {
+        Task<IEnumerable<TModel>> GetAllAsync();
         Task<TModel> GetByIdIfExistsAsync(int id);
         Task SaveAsync(TModel model);
         Task DeleteAsync(int id);
