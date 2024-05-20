@@ -26,13 +26,8 @@ namespace PetShelter.Data.Entities
 
         public int PetTypeId { get; set; }
 
-
-
-        public virtual PetType PetType { get; set; }
-
         public int BreedId { get; set; }
-
-        public virtual Breed Breed { get; set; }
+   
         public int? UserId { get; set; }
 
         public int? AdopterId { get; set; }
@@ -48,6 +43,8 @@ namespace PetShelter.Data.Entities
         public virtual Shelter Shelter { get; set; }
 
         public virtual List<PetVaccine> PetVaccines { get; set; }
+        public virtual PetType PetType { get; set; }
+        public virtual Breed Breed { get; set; }
     }
 
 }
