@@ -35,7 +35,11 @@ namespace PetShelter.Shared.Dtos
 
         public UserDto Giver { get; set; }
 
+        public PetDto Pet { get; set; }
+
         public int? ShelterId { get; set; }
+
+        public int? UserId { get; set; }
 
         public ShelterDto Shelter { get; set; }
 

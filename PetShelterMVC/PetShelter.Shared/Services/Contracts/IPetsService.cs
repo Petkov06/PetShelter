@@ -10,7 +10,7 @@ namespace PetShelter.Shared.Services.Contracts
 {
     public interface IPetsService : IBaseCrudService<PetDto, IPetRepository>
     {
-        public Task GivePetAsync(int userId, PetDto pet);
+        public Task GivePetAsync(int userId, int shelterId, PetDto pet);
         public Task AdoptPetAsync(int userId, int petId);
     }
 }

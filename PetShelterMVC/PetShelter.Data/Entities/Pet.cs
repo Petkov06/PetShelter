@@ -1,4 +1,5 @@
 ﻿
+using PetShelter.Shared.Dtos;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -25,11 +26,14 @@ namespace PetShelter.Data.Entities
 
         public int PetTypeId { get; set; }
 
+
+
         public virtual PetType PetType { get; set; }
 
         public int BreedId { get; set; }
 
         public virtual Breed Breed { get; set; }
+        public int? UserId { get; set; }
 
         public int? AdopterId { get; set; }
 

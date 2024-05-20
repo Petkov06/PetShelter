@@ -19,8 +19,9 @@ namespace PetShelter.Services
 
         }
 
-        public async Task GivePetAsync(int userId, PetDto pet)
+        public async Task GivePetAsync(int userId, int shelterId, PetDto pet)
         {
+            await _repository.GivePetAsync(userId, shelterId, pet);
         }
         public async Task AdoptPetAsync(int userId, int petId)
         {
