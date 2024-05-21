@@ -34,19 +34,33 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PetTypeId)
+            @Html.DisplayNameFor(model => model.IsAdopted)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PetTypeId)
+            @Html.DisplayFor(model => model.IsAdopted)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Color)
+            @Html.DisplayNameFor(model => model.IsEuthanized)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Color)
+            @Html.DisplayFor(model => model.IsEuthanized)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PetTypeId)
+        </dt>
+        <dd>
+            @Html.ActionLink("Pet Details", "Details", "Pet", new { id = Model.PetTypeId })
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BreedId)
+        </dt>
+        <dd>
+            @Html.ActionLink("Pet Details", "Details", "Breed", new { id = Model.BreedId })
         </dd>
     </dl>
     @using (Html.BeginForm())

@@ -18,6 +18,10 @@ namespace PetShelter.Services
         {
 
         }
+        public async Task VaccinatePetAsync(int petId, int vaccineId)
+        {
+            await _repository.VaccinatePetAsync(petId, vaccineId);
+        }
     }
 
 }

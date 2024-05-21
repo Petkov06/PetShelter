@@ -15,9 +15,8 @@ using PetShelter.Shared.Repos.Contracts;
 
 [AutoBind]
 public class PetRepository : BaseRepository<Pet, PetDto>, IPetRepository
-    
+
 {
-    public IPetRepository _petRepository;
     public PetRepository(PetShelterDbContext context, IMapper mapper) : base(context, mapper)
     {
 
@@ -25,14 +24,16 @@ public class PetRepository : BaseRepository<Pet, PetDto>, IPetRepository
     public async Task GivePetAsync(int userId, int shelterId, PetDto pet)
     {
         pet.UserId = userId;
-        pet.ShelterId = shelterId;  
+        pet.ShelterId = shelterId;
         await SaveAsync(pet);
-      
-
     }
     public async Task AdoptPetAsync(int userId, int petId)
     {
-        await _petRepository.UpdateAsync(petId);
+        var pet = await GetByIdAsync(petId);
+        pet.AdopterId = userId;
+        pet.IsAdopted = true;
+        await SaveAsync(pet);
+
     }
 }
 
