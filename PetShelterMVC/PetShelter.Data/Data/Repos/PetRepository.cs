@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using NuGet.Protocol.Core.Types;
 using PetShelter.Data.Data;
 using PetShelter.Data.Data.Repos;
 using PetShelter.Data.Entities;

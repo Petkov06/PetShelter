@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PetShelterMVC.ViewModels
 {
-    public class ChangePasswordVM : BaseVM
+    public class ChangePasswordVM
     {
         [Required]
         public string Username { get; set; }

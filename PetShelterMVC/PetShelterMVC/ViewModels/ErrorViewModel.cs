@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PetShelterMVC.ViewModels
 {
-    public class ErrorViewModel : BaseVM
+    public class ErrorViewModel 
     {
         [Required]
         public string Username { get; set; }
