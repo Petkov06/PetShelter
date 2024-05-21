@@ -21,7 +21,12 @@ namespace PetShelter.Services
 
         public async Task GivePetAsync(int userId, int shelterId, PetDto pet)
         {
-            await _repository.GivePetAsync(userId, shelterId, pet);
+
+            //if (!await ExistsByIdAsync(pet))
+            //{
+            //    throw new ArgumentException($"User with ID {pet} does not exist.");
+            //}
+            //await _repository.GivePetAsync(userId, shelterId, pet);
         }
         public async Task AdoptPetAsync(int userId, int petId)
         {
