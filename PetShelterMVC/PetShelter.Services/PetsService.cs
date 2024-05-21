@@ -25,7 +25,7 @@ namespace PetShelter.Services
         }
         public async Task AdoptPetAsync(int userId, int petId)
         {
-
+            await _repository.AdoptPetAsync(userId, petId);
         }
     }
 
