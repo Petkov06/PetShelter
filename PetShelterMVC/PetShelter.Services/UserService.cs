@@ -14,6 +14,7 @@ namespace PetShelter.Services
     [AutoBind]
     public class UserService : BaseCrudService<UserDto, IUserRepository>, IUsersService
     {
+       
         public UserService(IUserRepository repository) : base(repository)
         {
 

@@ -1,4 +1,5 @@
-﻿using PetShelter.Data.Entities;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using PetShelter.Data.Entities;
 using PetShelter.Shared.Dtos;
 using PetShelter.Shared.Enums;
 using System;
@@ -26,10 +27,10 @@ namespace PetShelterMVC.ViewModels
 
         [Required]
         public int? RoleId { get; set; }
-
+        public IEnumerable<SelectListItem> RoleList { get; set; }
 
         [Required]
         public int? ShelterId { get; set; }
-
+        public IEnumerable<SelectListItem> ShelterList { get; set; }
     }
 }

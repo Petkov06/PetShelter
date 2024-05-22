@@ -14,22 +14,40 @@ namespace PetShelter.Services
     [AutoBind]
     public class PetsService : BaseCrudService<PetDto, IPetRepository>, IPetsService
     {
-        public PetsService(IPetRepository repository) : base(repository)
-        {
+        public UserService _userService { get; set; }
+        public ShelterService _shelterService { get; set; }
+        public PetsService _petsService {  get; set; }
 
+        public PetsService(IPetRepository repository, UserService userService, ShelterService shelterService, PetsService petsService) : base(repository)
+        {
+            _userService = userService;
+            _shelterService = shelterService;
+            _petsService = petsService;
         }
 
         public async Task GivePetAsync(int userId, int shelterId, PetDto pet)
         {
 
-            //if (!await ExistsByIdAsync(pet))
-            //{
-            //    throw new ArgumentException($"User with ID {pet} does not exist.");
-            //}
-            //await _repository.GivePetAsync(userId, shelterId, pet);
+            if (!await _userService.ExistsByIdAsync(userId))
+            {
+                throw new ArgumentException($"User with ID {userId} does not exist.");
+            }
+            if (!await _shelterService.ExistsByIdAsync(shelterId))
+            {
+                throw new ArgumentException($"Shelter with ID {shelterId} does not exist.");
+            }
+            await _repository.GivePetAsync(userId, shelterId, pet);
         }
         public async Task AdoptPetAsync(int userId, int petId)
         {
+            if (!await _userService.ExistsByIdAsync(userId))
+            {
+                throw new ArgumentException($"User with ID {userId} does not exist.");
+            }
+            if (!await _petsService.ExistsByIdAsync(petId))
+            {
+                throw new ArgumentException($"Pet with ID {petId} does not exist.");
+            }
             await _repository.AdoptPetAsync(userId, petId);
         }
     }

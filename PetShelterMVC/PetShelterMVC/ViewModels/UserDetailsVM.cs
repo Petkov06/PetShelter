@@ -35,23 +35,19 @@ namespace PetShelterMVC.ViewModels
         public int? RoleId { get; set; }
 
         [Required]
-        public virtual Role Role { get; set; }
+        public  RoleDetailsVM Role { get; set; }
 
         [Required]
         public int? ShelterId { get; set; }
 
         [Required]
-        public virtual Shelter Shelter { get; set; }
+        public ShelterDetailsVM Shelter { get; set; }
         [Required]
         public List<PetDetailsVM> AdoptedPets { get; set; }
 
         [Required]
         public List<PetDetailsVM> GivenPets { get; set; }
         
-
-        [Required]
-        public UserRole UserRole { get; set; }
-
        
        
     }
