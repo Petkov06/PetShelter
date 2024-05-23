@@ -10,10 +10,9 @@ namespace PetShelterMVC.ViewModels
 {
     public class PetVaccineDetailsVM : BaseVM
     {
-        [Required]
         public int PetId { get; set; }
 
-        [Required]
+        
         public int VaccineId { get; set; }
     }
 }

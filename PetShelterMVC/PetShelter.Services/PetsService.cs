@@ -25,14 +25,14 @@ namespace PetShelter.Services
             _petsService = petsService;
         }
 
-        public async Task GivePetAsync(int userId, int shelterId, PetDto pet)
+        public async Task GivePetAsync(int? userId, int? shelterId, PetDto pet)
         {
 
-            if (!await _userService.ExistsByIdAsync(userId))
+            if (userId == null || !await _userService.ExistsByIdAsync(userId.Value))
             {
                 throw new ArgumentException($"User with ID {userId} does not exist.");
             }
-            if (!await _shelterService.ExistsByIdAsync(shelterId))
+            if (shelterId == null || !await _shelterService.ExistsByIdAsync(shelterId.Value))
             {
                 throw new ArgumentException($"Shelter with ID {shelterId} does not exist.");
             }

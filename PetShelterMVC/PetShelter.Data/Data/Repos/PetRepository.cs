@@ -19,7 +19,7 @@ public class PetRepository : BaseRepository<Pet, PetDto>, IPetRepository
     {
 
     }
-    public async Task GivePetAsync(int userId, int shelterId, PetDto pet)
+    public async Task GivePetAsync(int? userId, int? shelterId, PetDto pet)
     {
 
         pet.UserId = userId;

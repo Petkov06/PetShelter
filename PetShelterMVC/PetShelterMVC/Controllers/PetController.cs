@@ -18,14 +18,17 @@ namespace PetShelterMVC.Controllers
     {
         public IPetTypeService _petTypeService { get; set; }
         public IBreedsService _breedsService { get; set; }
-        public PetController(IPetsService service, IMapper mapper, IPetTypeService _petTypeService, IBreedsService _breedsService) : base(service, mapper)
+        public IPetVaccinesService _petVaccineService { get; set; }
+        public IPetsService _petsService { get; set; }
+        public PetController(IPetsService service, IMapper mapper, IPetTypeService _petTypeService, IBreedsService _breedsService, IPetVaccinesService _petVaccineService, IPetsService _petsService) : base(service, mapper)
         {
 
             this._petTypeService = _petTypeService;
             this._breedsService = _breedsService;
+            this._petVaccineService = _petVaccineService;
         }
 
-        
+
 
         public override async Task<PetEditVM> PrePopulateVMAsync()
         {
@@ -35,6 +38,16 @@ namespace PetShelterMVC.Controllers
                 BreedList = (await _breedsService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()))
             };
             return editVM;
+        }
+
+        public async Task VaccinatePetAsync(PetVaccineEditVM editVM)
+        {
+            await _petVaccineService.VaccinatePetAsync(editVM.PetId, editVM.VaccineId);
+        }
+
+        public async Task GivePetAsync(PetEditVM editVM)
+        {
+            await _petsService.GivePetAsync(editVM.GiverId,editVM.ShelterId,_mapper.Map<PetDto>(editVM));
         }
 
     }
