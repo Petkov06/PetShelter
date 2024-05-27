@@ -1,43 +1,34 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PetShelter.Data.Entities;
-using PetShelter.Shared.Enums;
-using PetShelter.Shared.Security;
-//using PetShelter.Shared.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace PetShelter.Data.Data
+using Microsoft.EntityFrameworkCore;
+using PetShelter.Data.Entities;
+using PetShelter.Shared.Enums;
+using PetShelter.Shared.Security;
+namespace PetShelter.Data
 {
     public class PetShelterDbContext
         : DbContext
     {
+        public DbSet<User> Users { get; set; }
+        public DbSet<Breed> Breed { get; set; }
+        public DbSet<Location> Location { get; set; }
+        public DbSet<Pet> Pet { get; set; }
+        public DbSet<PetType> PetType { get; set; }
+        public DbSet<PetVaccine> PetVaccine { get; set; }
+        public DbSet<Role> Role { get; set; }
+        public DbSet<Shelter> Shelter { get; set; }
+        public DbSet<Vaccine> Vaccine { get; set; }
         public PetShelterDbContext(DbContextOptions<PetShelterDbContext> options) : base(options)
         {
 
         }
-
-        public DbSet<User> Users { get; set; }
-
-        public DbSet<Vaccine> Vaccine { get; set; }
-        public DbSet<Shelter> Shelter { get; set; }
-        public DbSet<Role> Role { get; set; }
-        public DbSet<PetVaccine> PetVaccine { get; set; }
-        public DbSet<PetType> PetType { get; set; }
-        public DbSet<Pet> Pet { get; set; }
-        public DbSet<Location> Location { get; set; }
-        public DbSet<Breed> Breed { get; set; }
-       
-     
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseLazyLoadingProxies();
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -52,24 +43,20 @@ namespace PetShelter.Data.Data
 
             modelBuilder.Entity<Shelter>().HasOne(a => a.Location).WithOne(a => a.Shelter).HasForeignKey<Location>(c => c.ShelterId);
 
-
             foreach (var role in Enum.GetValues(typeof(UserRole)).Cast<UserRole>())
             {
                 modelBuilder.Entity<Role>().HasData(new Role { Id = (int)role, Name = role.ToString() });
             }
-
-            modelBuilder.Entity<User>().HasData(new User
-            {
-                Id = 1,
-                Username = "admin",
-                RoleId = (int)UserRole.Admin,
-                FirstName = "Admin",
-                LastName = "User",
-                Password = PasswordHasher.HashPassword("string")
-            });
-
-
+            modelBuilder.Entity<User>()
+                .HasData(new User
+                {
+                    Id = 1,
+                    Username = "admin",
+                    RoleId = (int)UserRole.Admin,
+                    FirstName = "Admin",
+                    LastName = "User",
+                    Password = PasswordHasher.HashPassword("string")
+                });
         }
-
     }
 }

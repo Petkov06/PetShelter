@@ -6,7 +6,7 @@ using PetShelter.Data.Entities;
 using PetShelter.Shared.Dtos;
 using PetShelter.Shared.Repos.Contracts;
 using PetShelter.Shared.Attributes;
-
+using PetShelter.Data;
 
 [AutoBind]
 public class VaccineRepository : BaseRepository<Vaccine, VaccineDto>, IVaccineRepository

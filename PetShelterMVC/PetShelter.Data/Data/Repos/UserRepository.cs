@@ -8,7 +8,7 @@ using PetShelter.Shared.Repos.Contracts;
 using PetShelter.Shared.Attributes;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-
+using PetShelter.Data;
 
 [AutoBind]
 public class UserRepository : BaseRepository<User, UserDto>, IUserRepository

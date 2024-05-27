@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using PetShelter.Data;
 using PetShelter.Data.Data;
 using PetShelter.Data.Data.Repos;
 using PetShelter.Data.Entities;

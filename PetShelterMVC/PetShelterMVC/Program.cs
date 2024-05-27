@@ -3,11 +3,13 @@ using System.Reflection;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using PetShelter.Data.Data;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using PetShelter.Shared.Extensions;
 using PetShelterMVC;
 using PetShelter.Services;
+using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using PetShelter.Data;
 
 internal class Program
 {
@@ -21,7 +23,7 @@ internal class Program
 
         builder.Services.AddDbContext<PetShelterDbContext>(options =>
         {
-            options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]);
+            options.UseSqlServer(builder.Configuration["ConnectionStrings:KPNINJA"]);
         });
 
         
@@ -29,7 +31,9 @@ internal class Program
             .AddCookie();
         
 
-        builder.Services.AddAutoMapper(m => m.AddProfile(new AutoMapperConfiguration()));
+        //builder.Services.AddAutoMapper(m => m.AddProfile(new AutoMapperConfiguration()));
+        //builder.Services.AddAutoMapper(assemblies: Assembly.GetExecutingAssembly());
+        //builder.Services.AddAutoMapper(typeof(AutoMapperConfiguration));
 
         builder.Services.AutoBind(typeof(PetsService).Assembly);
         builder.Services.AutoBind(typeof(PetRepository).Assembly);

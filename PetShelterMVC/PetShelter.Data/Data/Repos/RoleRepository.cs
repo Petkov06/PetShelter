@@ -7,6 +7,7 @@ using PetShelter.Shared.Dtos;
 using PetShelter.Shared.Repos.Contracts;
 using PetShelter.Shared.Attributes;
 using System.Threading.Tasks;
+using PetShelter.Data;
 using Microsoft.EntityFrameworkCore;
 
 

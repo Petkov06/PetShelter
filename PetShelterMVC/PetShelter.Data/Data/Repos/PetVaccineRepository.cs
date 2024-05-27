@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using PetShelter.Data;
 using PetShelter.Data.Data;
 using PetShelter.Data.Data.Repos;
 using PetShelter.Data.Entities;
