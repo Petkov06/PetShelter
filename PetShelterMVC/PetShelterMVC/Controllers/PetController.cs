@@ -9,6 +9,7 @@ using PetShelter.Services;
 using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Security.Claims;
 
 namespace PetShelterMVC.Controllers
 {
@@ -20,12 +21,14 @@ namespace PetShelterMVC.Controllers
         public IBreedsService _breedsService { get; set; }
         public IPetVaccinesService _petVaccineService { get; set; }
         public IPetsService _petsService { get; set; }
-        public PetController(IPetsService service, IMapper mapper, IPetTypeService _petTypeService, IBreedsService _breedsService, IPetVaccinesService _petVaccineService, IPetsService _petsService) : base(service, mapper)
+        public IUsersService _usersService { get; set; }
+        public PetController(IPetsService service, IMapper mapper, IPetTypeService _petTypeService, IBreedsService _breedsService, IPetVaccinesService _petVaccineService, IPetsService _petsService, IUsersService _usersService) : base(service, mapper)
         {
 
             this._petTypeService = _petTypeService;
             this._breedsService = _breedsService;
             this._petVaccineService = _petVaccineService;
+            this._usersService = _usersService;
         }
 
 
@@ -49,6 +52,11 @@ namespace PetShelterMVC.Controllers
         {
             await _petsService.GivePetAsync(editVM.GiverId,editVM.ShelterId,_mapper.Map<PetDto>(editVM));
         }
-
+        public async Task AdoptPetAsync(AdoptPetEditVM editVM)
+        {
+            string loggedUsername = User.FindFirst(ClaimTypes.Name)?.Value;
+            var user = await this._usersService.GetByUsernameAsync(loggedUsername);
+            await _petsService.AdoptPetAsync(user.Id, editVM.PetId);
+        }
     }
 }
