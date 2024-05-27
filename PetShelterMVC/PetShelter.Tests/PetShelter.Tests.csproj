@@ -30,7 +30,6 @@
     <ProjectReference Include="..\PetShelter.Data\PetShelter.Data.csproj" />
     <ProjectReference Include="..\PetShelter.Services\PetShelter.Services.csproj" />
     <ProjectReference Include="..\PetShelter.Shared\PetShelter.Shared.csproj" />
-    <ProjectReference Include="..\PetShelterMVC\PetShelterMVC.csproj" />
   </ItemGroup>
 
 </Project>
