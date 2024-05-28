@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-internal class Program
+public class Program
 {
     private static void Main(string[] args)
     {
@@ -23,16 +23,16 @@ internal class Program
 
         builder.Services.AddDbContext<PetShelterDbContext>(options =>
         {
-            options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]);
+            options.UseSqlServer(builder.Configuration["ConnectionStrings:KPNINJA"]);
         });
 
-
+       
 
         builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie();
 
 
-       //builder.Services.AddAutoMapper(assemblies: Assembly.GetExecutingAssembly());
+        builder.Services.AddAutoMapper(assemblies: Assembly.GetExecutingAssembly());
 
         builder.Services.AutoBind(typeof(PetsService).Assembly);
         builder.Services.AutoBind(typeof(PetRepository).Assembly);

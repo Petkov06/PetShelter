@@ -20,10 +20,10 @@ namespace PetShelter.Tests.Repos
         where T : class,IBaseEntity 
         where TModel : BaseModel
     {
-        private Mock<PetShelterDbContext> mockContext;
-        private Mock<DbSet<T>> mockDbSet;
-        private Mock<IMapper> mockMapper;
-        private TRepository repository;
+        public Mock<PetShelterDbContext> mockContext;
+        public Mock<DbSet<T>> mockDbSet;
+        public Mock<IMapper> mockMapper;
+        public TRepository repository;
 
         [SetUp]
         public void Setup()
@@ -35,6 +35,20 @@ namespace PetShelter.Tests.Repos
             {
                 CallBase = true
             }.Object;
+        }
+
+        public void MapToModel_ShouldReturnMappedModel()
+        {
+            //Arrange
+            var entity = new Mock<T>();
+            var model = new Mock<TModel>();
+            mockMapper.Setup(m => m.Map<TModel>(entity.Object)).Returns(model.Object);
+
+            //Act
+            var result = repository.MapToModel(entity.Object);
+
+            //Assert
+            Assert.That(result, Is.EqualTo(model.Object));
         }
     }
 }

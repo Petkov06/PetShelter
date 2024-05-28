@@ -26,7 +26,18 @@ namespace PetShelter.Data
 
         }
 
-        
+        //public PetShelterDbContext(DbSet<User> users, DbSet<Breed> breed, DbSet<Location> location, DbSet<Pet> pet, DbSet<PetType> petType, DbSet<PetVaccine> petVaccine, DbSet<Role> role, DbSet<Shelter> shelter, DbSet<Vaccine> vaccine, DbContextOptions<PetShelterDbContext> options) : base(options)
+        //{
+        //    this.Users = users;
+        //    this.Breed = breed;
+        //    this.Location = location;
+        //    this.Pet = pet;
+        //    this.PetType = petType;
+        //    this.PetVaccine = petVaccine;
+        //    this.Role = role;
+        //    this.Shelter = shelter;
+        //    this.Vaccine = vaccine;
+        //}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
