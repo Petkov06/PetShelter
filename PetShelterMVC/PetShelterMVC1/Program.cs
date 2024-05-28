@@ -32,7 +32,7 @@ public class Program
             .AddCookie();
 
 
-        builder.Services.AddAutoMapper(assemblies: Assembly.GetExecutingAssembly());
+        //builder.Services.AddAutoMapper(assemblies: Assembly.GetExecutingAssembly());
 
         builder.Services.AutoBind(typeof(PetsService).Assembly);
         builder.Services.AutoBind(typeof(PetRepository).Assembly);
