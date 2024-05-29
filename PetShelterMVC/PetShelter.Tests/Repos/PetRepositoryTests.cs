@@ -25,6 +25,8 @@ namespace PetShelter.Tests.Repos
             _petsService = petsService;
         }
 
+        [SetUp]
+
         [Test]
         public async Task GivePetAsync_ShouldAssignUserIdAndShelterIdAndSavePet()
         {
