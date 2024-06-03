@@ -51,7 +51,7 @@ namespace PetShelter.Tests.Repos
             Assert.That(result, Is.EqualTo(model.Object));
         }
         [Test]
-        public void MapToEntity_Shouuld_ReturnsMappedEntity()
+        public void MapToEntity_Should_ReturnsMappedEntity()
         {
             // Arrange
             var entity = new Mock<T>();

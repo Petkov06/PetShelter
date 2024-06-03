@@ -23,7 +23,7 @@ public class Program
 
         builder.Services.AddDbContext<PetShelterDbContext>(options =>
         {
-            options.UseSqlServer(builder.Configuration["ConnectionStrings:KPNINJA"]);
+            options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]);
         });
 
        
