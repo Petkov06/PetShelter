@@ -8,11 +8,11 @@ namespace PetShelter.Data.Entities
 {
     public class PetVaccine : BaseEntity
     {
-        public PetVaccine(int petId, int vaccineId)
-        {
-            this.PetId = petId;
-            this.VaccineId = vaccineId;
-        }
+        //public PetVaccine(int petId, int vaccineId)
+        //{
+        //    this.PetId = petId;
+        //    this.VaccineId = vaccineId;
+        //}
 
         public int? PetId { get; set; }
 

@@ -14,10 +14,10 @@ namespace PetShelter.Services
     [AutoBind]
     public class PetsVaccineService : BaseCrudService<PetVaccineDto, IPetVaccineRepository>, IPetVaccinesService
     {
-        public PetsService _petsService { get; set; }
-        public VaccineService _vaccineService { get; set; }
+        public IPetsService _petsService { get; set; }
+        public IVaccinesService _vaccineService { get; set; }
 
-        public PetsVaccineService(IPetVaccineRepository repository, PetsService petsService, VaccineService vaccineService) : base(repository)
+        public PetsVaccineService(IPetVaccineRepository repository, IPetsService petsService, IVaccinesService vaccineService) : base(repository)
         {
             _petsService = petsService;
             _vaccineService = vaccineService;

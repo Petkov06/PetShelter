@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+
 namespace PetShelter.Shared.Dtos
 {
     public class RoleDto : BaseModel

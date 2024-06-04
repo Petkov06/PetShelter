@@ -10,9 +10,11 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using PetShelter.Shared.Security;
 using PetShelterMVC.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PetShelterMVC.Controllers
 {
+    [AllowAnonymous]
     public class AuthController : Controller
     {
         private readonly IUsersService usersService;
