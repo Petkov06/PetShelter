@@ -11,7 +11,7 @@ namespace PetShelterMVC.Controllers
 {
 
 
-    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme, Roles = "Admin, Employee")]
+    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme, Roles = "Admin, Employee, User")]
     public class LocationController : BaseCrudController<LocationDto, ILocationRepository, ILocationsService, LocationEditVM, LocationDetailsVM>
     {
         public LocationController(ILocationsService service, IMapper mapper) : base(service, mapper)

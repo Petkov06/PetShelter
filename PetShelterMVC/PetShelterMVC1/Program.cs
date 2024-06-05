@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 
 public class Program
 {
@@ -23,7 +24,7 @@ public class Program
 
         builder.Services.AddDbContext<PetShelterDbContext>(options =>
         {
-            options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]);
+            options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"], builder => builder.UseRowNumberForPaging());
         });
 
        

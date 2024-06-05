@@ -1,6 +1,8 @@
-﻿using PetShelter.Shared.Attributes;
+﻿using Microsoft.AspNetCore.Identity;
+using PetShelter.Shared.Attributes;
 using PetShelter.Shared.Dtos;
 using PetShelter.Shared.Repos.Contracts;
+using PetShelter.Shared.Security;
 using PetShelter.Shared.Services.Contracts;
 using System;
 using System.Collections.Generic;
@@ -26,7 +28,8 @@ namespace PetShelter.Services
         }
         public async Task<bool> CanUserLoginAsync(string username, string password)
         {
-            return await _repository.CanUserLoginAsync(username, password);
+            var hashedPassword = (await this.GetByUsernameAsync(username))?.Password;
+            return PasswordHasher.VerifyPassword(password, hashedPassword); 
         }
          
     

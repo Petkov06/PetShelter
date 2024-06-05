@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace PetShelterMVC.Controllers
 {
 
-    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme, Roles = "Admin, Employee")]
+    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme, Roles = "Admin, Employee, User")]
     public class UserController : BaseCrudController<UserDto, IUserRepository, IUsersService, UserEditVM, UserDetailsVM>
     {
         public IRoleRepository _roleService { get; set; }

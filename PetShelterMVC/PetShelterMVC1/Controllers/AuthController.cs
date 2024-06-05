@@ -40,6 +40,7 @@ namespace PetShelterMVC.Controllers
             {
                 return Forbid();
             }
+
             if (!await this.usersService.CanUserLoginAsync(model.Username, model.Password))
             {
                 return BadRequest(Constants.InvalidCredentials);

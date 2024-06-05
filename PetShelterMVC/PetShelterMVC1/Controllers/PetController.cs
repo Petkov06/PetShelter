@@ -14,7 +14,7 @@ using System.Security.Claims;
 namespace PetShelterMVC.Controllers
 {
 
-    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme, Roles = "Admin, Employee")]
+    [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme, Roles = "Admin, Employee, User")]
     public class PetController : BaseCrudController<PetDto, IPetRepository, IPetsService, PetEditVM, PetDetailsVM>
     {
         public IPetTypeService _petTypeService { get; set; }
