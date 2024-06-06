@@ -24,13 +24,12 @@ namespace PetShelterMVC.Controllers
             this._roleService = _roleService;
             this._breedsService = _breedsService;
         }
-        public override async Task<UserEditVM> PrePopulateVMAsync()
+        protected override async Task<UserEditVM> PrePopulateVMAsync(UserEditVM editVM)
         {
-            var editVM = new UserEditVM
-            {
-                RoleList = (await _roleService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString())),
-                ShelterList = (await _breedsService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()))
-            };
+
+            editVM.RoleList = (await _roleService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
+            editVM.ShelterList = (await _breedsService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
+
             return editVM;
         }
 

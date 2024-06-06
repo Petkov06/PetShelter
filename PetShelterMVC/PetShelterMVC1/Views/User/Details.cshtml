@@ -18,13 +18,13 @@
             @Html.DisplayFor(model => model.Username)
         </dd>
 
-        <dt>
+       @*  <dt>
             @Html.DisplayNameFor(model => model.Password)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Password)
-        </dd>
+        </dd> *@
 
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -54,9 +54,11 @@
             @Html.DisplayNameFor(model => model.ShelterId)
         </dt>
         <dd>
-            @Html.ActionLink("Pet Details", "Details", "Breed", new { id = Model.ShelterId })
+            
+            @if (Model.ShelterId != null )
+            @Html.ActionLink("Shelter Details", "Details", "Breed", new { id = Model.ShelterId })
         </dd>
-
+        <hr />
     </dl>
 </div>
 <p>

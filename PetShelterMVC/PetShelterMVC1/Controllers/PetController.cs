@@ -35,13 +35,12 @@ namespace PetShelterMVC.Controllers
 
 
 
-        public override async Task<PetEditVM> PrePopulateVMAsync()
+        protected override async Task<PetEditVM> PrePopulateVMAsync(PetEditVM editVM)
         {
-            var editVM = new PetEditVM
-            {
-                PetTypeList = (await _petTypeService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString())),
-                BreedList = (await _breedsService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()))
-            };
+
+            editVM.PetTypeList = (await _petTypeService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
+               editVM.BreedList = (await _breedsService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
+            
             return editVM;
         }
 
@@ -56,7 +55,7 @@ namespace PetShelterMVC.Controllers
             //var user = await this._usersService.GetByUsernameAsync(loggedUsername);
             //await _petsService.AdoptPetAsync(user.Id, editVM.PetId);
 
-            var editVM = await PrePopulateVMAsync();
+            var editVM = await PrePopulateVMAsync(new PetEditVM());
             return View(editVM);
         }
         [HttpPost]
@@ -79,7 +78,7 @@ namespace PetShelterMVC.Controllers
             //var user = await this._usersService.GetByUsernameAsync(loggedUsername);
             //await _petsService.AdoptPetAsync(user.Id, editVM.PetId);
 
-            var editVM = await PrePopulateVMAsync();
+            var editVM = await PrePopulateVMAsync(new PetEditVM());
             return View(editVM);
         }
         [HttpPost]

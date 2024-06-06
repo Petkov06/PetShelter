@@ -13,11 +13,11 @@ namespace PetShelterMVC.ViewModels
     {
         public PetTypeDetailsVM()
         {
-            this.Pets = new List<PetTypeDetailsVM>();
+            this.Pets = new List<PetDetailsVM>();
         }
 
         public string Name { get; set; }
 
-        public List<PetTypeDetailsVM> Pets { get; set; }
+        public List<PetDetailsVM> Pets { get; set; }
     }
 }
