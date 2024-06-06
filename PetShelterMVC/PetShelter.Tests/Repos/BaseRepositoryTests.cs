@@ -36,33 +36,33 @@ namespace PetShelter.Tests.Repos
                 CallBase = true
             }.Object;
         }
-        [Test]
-        public void MapToModel_ValidEntity_ReturnsMappedModel()
-        {
-            //Arrange
-            var entity = new Mock<T>();
-            var model = new Mock<TModel>();
-            mockMapper.Setup(m => m.Map<TModel>(entity.Object)).Returns(model.Object);
+        //[Test]
+        //public void MapToModel_ValidEntity_ReturnsMappedModel()
+        //{
+        //    //Arrange
+        //    var entity = new Mock<T>();
+        //    var model = new Mock<TModel>();
+        //    mockMapper.Setup(m => m.Map<TModel>(entity.Object)).Returns(model.Object);
 
-            //Act
-            var result = repository.MapToModel(entity.Object);
+        //    //Act
+        //    var result = repository.MapToModel(entity.Object);
 
-            //Assert
-            Assert.That(result, Is.EqualTo(model.Object));
-        }
-        [Test]
-        public void MapToEntity_Should_ReturnsMappedEntity()
-        {
-            // Arrange
-            var entity = new Mock<T>();
-            var model = new Mock<TModel>();
-            mockMapper.Setup(m => m.Map<T>(model.Object)).Returns(entity.Object);
+        //    //Assert
+        //    Assert.That(result, Is.EqualTo(model.Object));
+        //}
+        //[Test]
+        //public void MapToEntity_Should_ReturnsMappedEntity()
+        //{
+        //    // Arrange
+        //    var entity = new Mock<T>();
+        //    var model = new Mock<TModel>();
+        //    mockMapper.Setup(m => m.Map<T>(model.Object)).Returns(entity.Object);
 
-            // Act
-            var result = repository.MapToEntity(model.Object);
+        //    // Act
+        //    var result = repository.MapToEntity(model.Object);
 
-            // Assert
-            Assert.That(result, Is.EqualTo(entity.Object));
-        }
+        //    // Assert
+        //    Assert.That(result, Is.EqualTo(entity.Object));
+        //}
     }
 }

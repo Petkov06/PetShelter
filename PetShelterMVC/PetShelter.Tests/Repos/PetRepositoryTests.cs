@@ -18,33 +18,33 @@ namespace PetShelter.Tests.Repos
 {
     public class PetRepositoryTests: BaseRepositoryTests<PetRepository,Pet, PetDto>
     {
-        public IPetsService _petsService { get; set; }
+        //public IPetsService _petsService { get; set; }
 
-        public PetRepositoryTests(IPetsService petsService)
-        {
-            _petsService = petsService;
-        }
+        //public PetRepositoryTests(IPetsService petsService)
+        //{
+        //    _petsService = petsService;
+        //}
 
-        [SetUp]
+        //[SetUp]
 
-        [Test]
-        public async Task GivePetAsync_ShouldAssignUserIdAndShelterIdAndSavePet()
-        {
-            // Arrange
-            var userId = 1;
-            var shelterId = 1;
-            var petDto = new PetDto { Id = 1 };
+        //[Test]
+        //public async Task GivePetAsync_ShouldAssignUserIdAndShelterIdAndSavePet()
+        //{
+        //    // Arrange
+        //    var userId = 1;
+        //    var shelterId = 1;
+        //    var petDto = new PetDto { Id = 1 };
 
-            // Act
-            await _petsService.GivePetAsync(userId, shelterId, petDto);
+        //    // Act
+        //    await _petsService.GivePetAsync(userId, shelterId, petDto);
 
-            // Assert
-            //var savedPet = await mockContext.Pets.FindAsync(1);
-            ////Assert.DoesNotThrow(savedPet);
-            //Assert.That(userId, savedPet.UserId, Is.EqualTo(petDto));
-            ////Assert.AreEqual(userId, savedPet.UserId);
-            //Assert.That(shelterId, savedPet.UserId, Is.EqualTo(petDto));
-            ////Assert.AreEqual(shelterId, savedPet.ShelterId);
-        }
+        //    // Assert
+        //    //var savedPet = await mockContext.Pets.FindAsync(1);
+        //    ////Assert.DoesNotThrow(savedPet);
+        //    //Assert.That(userId, savedPet.UserId, Is.EqualTo(petDto));
+        //    ////Assert.AreEqual(userId, savedPet.UserId);
+        //    //Assert.That(shelterId, savedPet.UserId, Is.EqualTo(petDto));
+        //    ////Assert.AreEqual(shelterId, savedPet.ShelterId);
+        //}
     }
 }

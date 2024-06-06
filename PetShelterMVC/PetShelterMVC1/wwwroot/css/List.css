@@ -1,0 +1,10 @@
+﻿.pet-buttons {
+    margin-top: 20px;
+    text-align: left;
+    background-color: white;
+    cursor: pointer;
+}
+         .pet-buttons.nav-link:hover {
+            color: black;
+            text-decoration:auto;
+        }

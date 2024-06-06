@@ -17,8 +17,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Name, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-10">
                 @Html.EditorFor(model => model.Name)
                 @Html.ValidationMessageFor(model => model.Name)
             </div>
@@ -26,8 +25,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Age, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-10">
                 @Html.EditorFor(model => model.Age)
                 @Html.ValidationMessageFor(model => model.Age)
             </div>
@@ -35,8 +33,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Color, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-10">
                 @Html.EditorFor(model => model.Color)
                 @Html.ValidationMessageFor(model => model.Color)
             </div>
@@ -44,8 +41,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.IsAdopted, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-10">
                 @Html.EditorFor(model => model.IsAdopted)
                 @Html.ValidationMessageFor(model => model.IsAdopted)
             </div>
@@ -53,8 +49,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.IsEuthanized, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-10">
                 @Html.EditorFor(model => model.IsEuthanized)
                 @Html.ValidationMessageFor(model => model.IsEuthanized)
             </div>
@@ -63,8 +58,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.PetTypeId, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-10">
                 @Html.DropDownListFor(model => model.PetTypeId, Model.PetTypeList, "Choose a Pet...", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.PetTypeId)
             </div>
@@ -78,8 +72,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.BreedId, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-offset-2 col-md-10">
                 @Html.DropDownListFor(model => model.BreedId, Model.BreedList, "Choose a Breed...", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.BreedId)
             </div>

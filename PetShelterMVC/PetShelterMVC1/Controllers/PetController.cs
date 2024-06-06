@@ -22,7 +22,8 @@ namespace PetShelterMVC.Controllers
         public IPetTypeService _petTypeService { get; set; }
         public IBreedsService _breedsService { get; set; }
         public IPetVaccinesService _petVaccineService { get; set; }
-        public IPetsService _petsService { get; set; }
+
+        //public IPetsService _petsService { get; set; }
         public IUsersService _usersService { get; set; }
         public PetController(IPetsService service, IMapper mapper, IPetTypeService _petTypeService, IBreedsService _breedsService, IPetVaccinesService _petVaccineService, IPetsService _petsService, IUsersService _usersService) : base(service, mapper)
         {
@@ -39,14 +40,21 @@ namespace PetShelterMVC.Controllers
         {
 
             editVM.PetTypeList = (await _petTypeService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
-               editVM.BreedList = (await _breedsService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
-            
+            editVM.BreedList = (await _breedsService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
+
             return editVM;
         }
-
-        public async Task VaccinatePetAsync(PetVaccineEditVM editVM)
+       
+            public async Task VaccinatePetAsync(PetVaccineEditVM editVM)
         {
             await _petVaccineService.VaccinatePetAsync(editVM.PetId, editVM.VaccineId);
+        }
+        protected async Task<AdoptPetEditVM> PrePopulateVMAsync(AdoptPetEditVM editVM)
+        {
+
+            editVM.PetList = (await _service.GetAllActiveAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
+
+            return editVM;
         }
         [HttpGet]
         public async Task<IActionResult> GivePetAsync()
@@ -78,7 +86,7 @@ namespace PetShelterMVC.Controllers
             //var user = await this._usersService.GetByUsernameAsync(loggedUsername);
             //await _petsService.AdoptPetAsync(user.Id, editVM.PetId);
 
-            var editVM = await PrePopulateVMAsync(new PetEditVM());
+            var editVM = await PrePopulateVMAsync(new AdoptPetEditVM());
             return View(editVM);
         }
         [HttpPost]

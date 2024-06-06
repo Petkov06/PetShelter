@@ -44,20 +44,27 @@
         <dd>
             @Html.ActionLink("Pet Details", "Details", "Breed", new { id = Model.BreedId })
         </dd>
+        @if (Model.IsAdopted)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.IsAdopted)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IsAdopted)
+            </dd>
+        }
+        else 
+        {
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsAdopted)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.IsAdopted)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.IsEuthanized)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IsEuthanized)
+            </dd>
+        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsEuthanized)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.IsEuthanized)
-        </dd>
+
 
     </dl>
 </div>

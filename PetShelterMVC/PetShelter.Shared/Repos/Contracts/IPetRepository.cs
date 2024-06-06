@@ -11,5 +11,7 @@ namespace PetShelter.Shared.Repos.Contracts
     {
         public Task GivePetAsync(int? userId, int? shelterId, PetDto pet);
         public Task AdoptPetAsync(int userId, int petId);
+
+        public Task<IEnumerable<PetDto>> GetAllActiveAsync();
     }
 }

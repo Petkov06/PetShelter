@@ -16,8 +16,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Name, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-offset-2 col-md-10">
                 @Html.EditorFor(model => model.Name)
                 @Html.ValidationMessageFor(model => model.Name)
             </div>
@@ -25,8 +24,7 @@
 
         <div class="forn-group">
             @Html.LabelFor(model => model.Size, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-offset-2 col-md-10">
                 @Html.EditorFor(model => model.Size)
                 @Html.ValidationMessageFor(model => model.Size)
             </div>

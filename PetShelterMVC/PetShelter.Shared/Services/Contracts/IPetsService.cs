@@ -13,5 +13,7 @@ namespace PetShelter.Shared.Services.Contracts
        
         public Task AdoptPetAsync(int userId, int petId);
         public Task GivePetAsync(int? giverId, int? shelterId, PetDto petDto);
+
+        public Task<IEnumerable<PetDto>> GetAllActiveAsync();
     }
 }

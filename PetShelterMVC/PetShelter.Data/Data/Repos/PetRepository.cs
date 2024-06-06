@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using PetShelter.Data;
 using PetShelter.Data.Data;
 using PetShelter.Data.Data.Repos;
@@ -34,6 +37,11 @@ public class PetRepository : BaseRepository<Pet, PetDto>, IPetRepository
         pet.IsAdopted = true;
         await SaveAsync(pet);
 
+    }
+
+    public async Task<IEnumerable<PetDto>> GetAllActiveAsync()
+    {
+        return MapToEnumerableOfModel(await _dbSet.Where(l => l.ShelterId == null).ToListAsync());
     }
 }
 

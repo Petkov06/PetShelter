@@ -17,8 +17,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.PetCapacity, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-offset-2 col-md-10">
                 @Html.EditorFor(model => model.PetCapacity)
                 @Html.ValidationMessageFor(model => model.PetCapacity)
             </div>
@@ -26,8 +25,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.LocationId, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-offset-2 col-md-10">
                 @Html.DropDownListFor(model => model.LocationId, Model.LocationList, "Choose a location...", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.LocationId)
             </div>

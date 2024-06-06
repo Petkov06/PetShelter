@@ -17,8 +17,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Username, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-offset-2 col-md-10">
                 @Html.EditorFor(model => model.Username)
                 @Html.ValidationMessageFor(model => model.Username)
             </div>
@@ -35,8 +34,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.FirstName, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-offset-2 col-md-10">
                 @Html.EditorFor(model => model.FirstName)
                 @Html.ValidationMessageFor(model => model.FirstName)
             </div>
@@ -44,8 +42,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.LastName, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-offset-2 col-md-10">
                 @Html.EditorFor(model => model.LastName)
                 @Html.ValidationMessageFor(model => model.LastName)
             </div>
@@ -56,8 +53,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.RoleId, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-offset-2 col-md-10">
                 @Html.DropDownListFor(model => model.RoleId, Model.RoleList, "Choose a Role...", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.RoleId)
             </div>
@@ -71,8 +67,7 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.ShelterId, new { @class = "control-label col-md 2" })
-            <div>
-                class="col-md-10"
+            <div class="col-md-offset-2 col-md-10">
                 @Html.DropDownListFor(model => model.ShelterId, Model.ShelterList, "Choose a Shelter...", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ShelterId)
             </div>

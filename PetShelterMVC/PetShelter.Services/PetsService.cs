@@ -1,4 +1,5 @@
-﻿using PetShelter.Shared.Attributes;
+﻿using NuGet.Protocol.Core.Types;
+using PetShelter.Shared.Attributes;
 using PetShelter.Shared.Dtos;
 using PetShelter.Shared.Repos.Contracts;
 using PetShelter.Shared.Services.Contracts;
@@ -16,13 +17,20 @@ namespace PetShelter.Services
     {
         public IUsersService _userService { get; set; }
         public ISheltersService _shelterService { get; set; }
-        
 
+        public PetsService(IPetRepository repository) : base(repository)
+        {
+        }
         public PetsService(IPetRepository repository, IUsersService userService, ISheltersService shelterService) : base(repository)
         {
             _userService = userService;
             _shelterService = shelterService;
         }
+        public Task<IEnumerable<PetDto>> GetAllActiveAsync()
+        {
+            return _repository.GetAllActiveAsync();
+        }
+
 
         public async Task GivePetAsync(int? userId, int? shelterId, PetDto pet)
         {
