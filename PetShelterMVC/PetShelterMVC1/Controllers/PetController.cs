@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Security.Claims;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+using Microsoft.AspNetCore.Mvc;
 
 namespace PetShelterMVC.Controllers
 {
@@ -47,16 +49,47 @@ namespace PetShelterMVC.Controllers
         {
             await _petVaccineService.VaccinatePetAsync(editVM.PetId, editVM.VaccineId);
         }
-
-        public async Task GivePetAsync(PetEditVM editVM)
+        [HttpGet]
+        public async Task<IActionResult> GivePetAsync()
         {
-            await _petsService.GivePetAsync(editVM.GiverId,editVM.ShelterId,_mapper.Map<PetDto>(editVM));
+            //string loggedUsername = User.FindFirst(ClaimTypes.Name)?.Value;
+            //var user = await this._usersService.GetByUsernameAsync(loggedUsername);
+            //await _petsService.AdoptPetAsync(user.Id, editVM.PetId);
+
+            var editVM = await PrePopulateVMAsync();
+            return View(editVM);
         }
-        public async Task AdoptPetAsync(AdoptPetEditVM editVM)
+        [HttpPost]
+        public async Task<IActionResult> GivePetAsync(PetEditVM editVM)
+        {
+            //await _petsService.GivePetAsync(editVM.GiverId, editVM.ShelterId, _mapper.Map<PetDto>(editVM));
+            var errors = await Validate(editVM);
+            if (errors != null)
+            {
+                return View(editVM);
+            }
+            var model = _mapper.Map<PetDto>(editVM);
+            await this._service.SaveAsync(model);
+            return await List();
+        }
+        [HttpGet]
+        public async Task<IActionResult> AdoptPetAsync()
+        {
+            //string loggedUsername = User.FindFirst(ClaimTypes.Name)?.Value;
+            //var user = await this._usersService.GetByUsernameAsync(loggedUsername);
+            //await _petsService.AdoptPetAsync(user.Id, editVM.PetId);
+
+            var editVM = await PrePopulateVMAsync();
+            return View(editVM);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AdoptPetAsync(AdoptPetEditVM editVM)
         {
             string loggedUsername = User.FindFirst(ClaimTypes.Name)?.Value;
             var user = await this._usersService.GetByUsernameAsync(loggedUsername);
-            await _petsService.AdoptPetAsync(user.Id, editVM.PetId);
+            await this._service.AdoptPetAsync(user.Id, editVM.PetId);
+            return await List();
         }
+
     }
 }

@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using EntityFrameworkCore.UseRowNumberForPaging;
 
 public class Program
 {
@@ -22,9 +24,12 @@ public class Program
         builder.Services.AddControllersWithViews();
 
 
-        builder.Services.AddDbContext<PetShelterDbContext>(options =>
+
+       
+
+    builder.Services.AddDbContext<PetShelterDbContext>(options =>
         {
-            options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"], builder => builder.UseRowNumberForPaging());
+            options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"], r => r.UseRowNumberForPaging());
         });
 
        
