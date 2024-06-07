@@ -41,7 +41,7 @@ public class PetRepository : BaseRepository<Pet, PetDto>, IPetRepository
 
     public async Task<IEnumerable<PetDto>> GetAllActiveAsync()
     {
-        return MapToEnumerableOfModel(await _dbSet.Where(l => l.ShelterId == null).ToListAsync());
+        return MapToEnumerableOfModel(await _dbSet.Where(l => l.ShelterId == null && !l.IsEuthanized && !l.IsAdopted).ToListAsync());
     }
 }
 

@@ -1,4 +1,6 @@
-﻿@{
+﻿@using System.Security.Claims
+@using PetShelter.Shared.Enums
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +8,25 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@if (Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.User.ToString() )
+{
+<div class="pet-buttons">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="GivePet">Give Pet</a>
+    </button>
+</div>
+}
+
+@if (Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.User.ToString())
+{
+    <div class="pet-buttons">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="AdoptPet">Adopt Pet</a>
+        </button>
+    </div>
+}

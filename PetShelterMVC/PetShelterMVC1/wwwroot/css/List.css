@@ -4,7 +4,7 @@
     background-color: white;
     cursor: pointer;
 }
-         .pet-buttons.nav-link:hover {
-            color: black;
-            text-decoration:auto;
-        }
+    .pet-buttons.nav-link:hover {
+        color: black;
+        text-decoration: auto;
+    }

@@ -22,8 +22,6 @@ namespace PetShelterMVC.Controllers
         public IPetTypeService _petTypeService { get; set; }
         public IBreedsService _breedsService { get; set; }
         public IPetVaccinesService _petVaccineService { get; set; }
-
-        //public IPetsService _petsService { get; set; }
         public IUsersService _usersService { get; set; }
         public PetController(IPetsService service, IMapper mapper, IPetTypeService _petTypeService, IBreedsService _breedsService, IPetVaccinesService _petVaccineService, IPetsService _petsService, IUsersService _usersService) : base(service, mapper)
         {
@@ -59,9 +57,6 @@ namespace PetShelterMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> GivePetAsync()
         {
-            //string loggedUsername = User.FindFirst(ClaimTypes.Name)?.Value;
-            //var user = await this._usersService.GetByUsernameAsync(loggedUsername);
-            //await _petsService.AdoptPetAsync(user.Id, editVM.PetId);
 
             var editVM = await PrePopulateVMAsync(new PetEditVM());
             return View(editVM);
@@ -69,7 +64,6 @@ namespace PetShelterMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> GivePetAsync(PetEditVM editVM)
         {
-            //await _petsService.GivePetAsync(editVM.GiverId, editVM.ShelterId, _mapper.Map<PetDto>(editVM));
             var errors = await Validate(editVM);
             if (errors != null)
             {
@@ -82,9 +76,7 @@ namespace PetShelterMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> AdoptPetAsync()
         {
-            //string loggedUsername = User.FindFirst(ClaimTypes.Name)?.Value;
-            //var user = await this._usersService.GetByUsernameAsync(loggedUsername);
-            //await _petsService.AdoptPetAsync(user.Id, editVM.PetId);
+            
 
             var editVM = await PrePopulateVMAsync(new AdoptPetEditVM());
             return View(editVM);

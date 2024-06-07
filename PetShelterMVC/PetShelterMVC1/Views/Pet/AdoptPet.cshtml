@@ -19,6 +19,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PetId, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                
                 @Html.DropDownListFor(model => model.PetId, Model.PetList, "Choose a Breed...",
                          new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.PetId)
