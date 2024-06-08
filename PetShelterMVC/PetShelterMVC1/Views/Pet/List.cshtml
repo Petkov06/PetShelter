@@ -5,9 +5,16 @@
 }
 <link rel="stylesheet" type="text/css" href="~/css/List.css"/>
 <h2>Pet</h2>
-<p>
+@* <p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p> *@
+<div class="pet-buttons">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="GivePet">Give Pet</a>
+    </button>
+</div>
 <table class="table">
     <tr>
         <th>
@@ -52,24 +59,20 @@
                 }
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+                @if (item.IsAdopted) 
+                {
+                    <span class="text-success">Кучето е осиновено</span>
+                }
+                else if(item.IsEuthanized)
+                {
+                    <span class="text-danger">Кучето е мъртво</span>
+                }
+                else
+                {
+                    @Html.ActionLink("Adopt Pet", "AdoptPet", new { id = item.Id })
+                }
             </td>
         </tr>
     }
-    
-
 </table>
-<div class="pet-buttons">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="GivePet">Give Pet</a>
-    </button>
-</div>
 
-<div class="pet-buttons">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="AdoptPet">Adopt Pet</a>
-    </button>
-</div>

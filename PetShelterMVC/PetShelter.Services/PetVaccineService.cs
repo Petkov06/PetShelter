@@ -23,6 +23,10 @@ namespace PetShelter.Services
             _vaccineService = vaccineService;
         }
 
+        public PetsVaccineService(IPetVaccineRepository repository) : base(repository)
+        {
+        }
+
         public async Task VaccinatePetAsync(int petId, int vaccineId)
         {
             if (!await _petsService.ExistsByIdAsync(petId))

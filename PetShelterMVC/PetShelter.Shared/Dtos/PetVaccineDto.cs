@@ -2,6 +2,10 @@
 {
     public class PetVaccineDto : BaseModel
     {
+        public PetVaccineDto()
+        {
+        }
+
         public PetVaccineDto(int petId, int vaccineId)
         {
             this.PetId = petId;
