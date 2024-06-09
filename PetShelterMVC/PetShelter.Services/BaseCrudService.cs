@@ -32,8 +32,6 @@ namespace PetShelter.Services
         public virtual Task<TModel> GetByIdIfExistsAsync(int id)
             => this._repository.GetByIdAsync(id);
 
-
-
         public virtual Task<IEnumerable<TModel>> GetWithPaginationAsync(int pageSize, int pageNumber)
             => this._repository.GetWithPaginationAsync(pageSize, pageNumber);
 

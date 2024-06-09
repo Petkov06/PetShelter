@@ -97,7 +97,6 @@ namespace PetShelterMVC.Controllers
 
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
-
         [HttpGet]
         public async Task<IActionResult> Logout()
         {

@@ -43,6 +43,14 @@
         <dd>
             @Html.ActionLink("Pet Details", "Details", "Breed", new { id = Model.BreedId })
         </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiverId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GiverId)
+        </dd>
+
         @if (Model.IsAdopted)
         {
             <dt>
@@ -52,7 +60,7 @@
                 @Html.DisplayFor(model => model.IsAdopted)
             </dd>
         }
-        else 
+        else
         {
 
             <dt>

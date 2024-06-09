@@ -1,4 +1,6 @@
-﻿namespace PetShelter.Shared.Dtos
+﻿using System.Collections.Generic;
+
+namespace PetShelter.Shared.Dtos
 {
     public class PetVaccineDto : BaseModel
     {
@@ -16,6 +18,7 @@
         public PetDto Pet { get; set; }
 
         public int? VaccineId { get; set; }
+        public List<PetVaccineDto> PetVaccines { get; set; }
 
         public VaccineDto Vaccine { get; set; }
     }

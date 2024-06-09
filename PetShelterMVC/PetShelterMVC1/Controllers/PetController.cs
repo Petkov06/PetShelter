@@ -43,10 +43,7 @@ namespace PetShelterMVC.Controllers
             return editVM;
         }
        
-            public async Task VaccinatePetAsync(PetVaccineEditVM editVM)
-        {
-            await _petVaccineService.VaccinatePetAsync(editVM.PetId, editVM.VaccineId);
-        }
+           
         protected async Task<AdoptPetEditVM> PrePopulateVMAsync(AdoptPetEditVM editVM)
         {
 
@@ -76,8 +73,6 @@ namespace PetShelterMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> AdoptPetAsync()
         {
-            
-
             var editVM = await PrePopulateVMAsync(new AdoptPetEditVM());
             return View(editVM);
         }
@@ -90,5 +85,32 @@ namespace PetShelterMVC.Controllers
             return await List();
         }
 
+
+        protected async Task<PetVaccineEditVM> PrePopulateVMAsync(PetVaccineEditVM editVM)
+        {
+            editVM.PetList = (await _service.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
+            editVM.VaccineList = (await _petVaccineService.GetAllActiveAsync()).Select(x => new SelectListItem($"{x.Vaccine}", x.Id.ToString()));
+
+            return editVM;
+        }
+        [HttpGet]
+        public async Task<IActionResult> VaccinatePetAsync()
+        {
+            var editVM = await PrePopulateVMAsync(new PetVaccineEditVM());
+            return View(editVM);
+        }
+        [HttpPost]
+        public async Task<IActionResult> VaccinatePetAsync(PetVaccineEditVM editVM)
+        {
+            string loggedUsername = User.FindFirst(ClaimTypes.Name)?.Value;
+            var user = await this._usersService.GetByUsernameAsync(loggedUsername);
+            await this._petVaccineService.VaccinatePetAsync(user.Id, editVM.PetId);
+            return await List();
+        }
+
+        //public async Task VaccinatePetAsync(PetVaccineEditVM editVM)
+        //{
+        //    await _petVaccineService.VaccinatePetAsync(editVM.PetId, editVM.VaccineId);
+        //}
     }
 }

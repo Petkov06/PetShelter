@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using PetShelter.Data;
 using PetShelter.Data.Data;
 using PetShelter.Data.Data.Repos;
@@ -23,5 +25,10 @@ public class PetVaccineRepository : BaseRepository<PetVaccine, PetVaccineDto>, I
     {
         var petVaccine = new PetVaccineDto(petId, vaccineId);
         await SaveAsync(petVaccine);
+    }
+
+    public async Task<IEnumerable<PetVaccineDto>> GetAllActiveAsync()
+    {
+        return MapToEnumerableOfModel(await _dbSet.Where(v => v.Vaccine != null).ToListAsync());
     }
 }

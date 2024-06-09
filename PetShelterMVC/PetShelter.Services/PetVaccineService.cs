@@ -40,6 +40,10 @@ namespace PetShelter.Services
            
             await _repository.VaccinatePetAsync(petId, vaccineId);
         }
+        public Task<IEnumerable<PetVaccineDto>> GetAllActiveAsync()
+        {
+            return _repository.GetAllActiveAsync();
+        }
     }
 
 }
