@@ -47,9 +47,31 @@
         <dt>
             @Html.DisplayNameFor(model => model.PetVaccines)
         </dt>
-
         <dd>
-                @Html.DisplayFor(model => model.PetVaccines)
+            @if (Model.PetVaccines != null && Model.PetVaccines.Any())
+            {
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Име на ваксината</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var vaccine in Model.PetVaccines)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => vaccine.Vaccine.Name)</td>
+                                
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>Не е ваксиниран.</p>
+            }
         </dd>
 
 

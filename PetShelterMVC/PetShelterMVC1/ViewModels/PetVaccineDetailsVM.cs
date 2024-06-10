@@ -1,4 +1,5 @@
-﻿using PetShelter.Shared.Enums;
+﻿using PetShelter.Data.Entities;
+using PetShelter.Shared.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,7 +13,10 @@ namespace PetShelterMVC.ViewModels
     {
         public int PetId { get; set; }
 
-        
-        public int VaccineId { get; set; }
+        public PetDetailsVM Pet { get; set; }
+
+        public int? VaccineId { get; set; }
+
+        public VaccineDetailsVM Vaccine { get; set; }
     }
 }

@@ -107,7 +107,7 @@ namespace PetShelterMVC.Controllers
         {
             string loggedUsername = User.FindFirst(ClaimTypes.Name)?.Value;
             var user = await this._usersService.GetByUsernameAsync(loggedUsername);
-            await this._petVaccinesService.VaccinatePetAsync(user.Id, editVM.PetId);
+            await this._petVaccinesService.VaccinatePetAsync( editVM.PetId, editVM.VaccineId);
             return await List();
         }
 
