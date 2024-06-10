@@ -27,6 +27,11 @@ namespace PetShelter.Services
         {
         }
 
+        protected Task<IEnumerable<PetVaccineDto>> GetAllAsync()
+        {
+            return _repository.GetAllAsync();
+        }
+
         public async Task VaccinatePetAsync(int petId, int vaccineId)
         {
             if (!await _petsService.ExistsByIdAsync(petId))
@@ -40,10 +45,7 @@ namespace PetShelter.Services
            
             await _repository.VaccinatePetAsync(petId, vaccineId);
         }
-        public Task<IEnumerable<PetVaccineDto>> GetAllActiveAsync()
-        {
-            return _repository.GetAllActiveAsync();
-        }
+        
     }
 
 }

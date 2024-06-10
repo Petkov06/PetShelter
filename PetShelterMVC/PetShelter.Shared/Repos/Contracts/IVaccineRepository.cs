@@ -9,5 +9,6 @@ namespace PetShelter.Shared.Repos.Contracts
 {
     public interface IVaccineRepository : IBaseRepository<VaccineDto>
     {
+
     }
 }

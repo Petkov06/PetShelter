@@ -1,4 +1,5 @@
-﻿using PetShelter.Shared.Enums;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using PetShelter.Shared.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,9 @@ namespace PetShelterMVC.ViewModels
         public string Name { get; set; }
         [Required]
         public string Description { get; set; }
+
+        public IEnumerable<SelectListItem> VaccineList { get; set; }
+
 
     }
 }

@@ -12,6 +12,6 @@ namespace PetShelter.Shared.Services.Contracts
 
     {
         public Task VaccinatePetAsync(int petId, int vaccineId);
-        public Task<IEnumerable<PetVaccineDto>> GetAllActiveAsync();
+        public Task<IEnumerable<PetVaccineDto>> GetAllAsync();
     }
 }

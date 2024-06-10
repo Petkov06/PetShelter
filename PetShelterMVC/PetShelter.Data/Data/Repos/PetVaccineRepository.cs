@@ -27,8 +27,9 @@ public class PetVaccineRepository : BaseRepository<PetVaccine, PetVaccineDto>, I
         await SaveAsync(petVaccine);
     }
 
-    public async Task<IEnumerable<PetVaccineDto>> GetAllActiveAsync()
+    public async Task<IEnumerable<PetVaccineDto>> GetAllAsync()
     {
-        return MapToEnumerableOfModel(await _dbSet.Where(v => v.Vaccine != null).ToListAsync());
+        
+        return this.MapToEnumerableOfModel(await _dbSet.ToListAsync());
     }
 }

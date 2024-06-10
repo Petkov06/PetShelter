@@ -14,4 +14,5 @@ public class VaccineRepository : BaseRepository<Vaccine, VaccineDto>, IVaccineRe
 	public VaccineRepository(PetShelterDbContext context, IMapper mapper) : base(context, mapper)
 	{
 	}
+
 }

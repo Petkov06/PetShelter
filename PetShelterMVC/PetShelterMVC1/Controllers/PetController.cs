@@ -21,15 +21,18 @@ namespace PetShelterMVC.Controllers
     {
         public IPetTypeService _petTypeService { get; set; }
         public IBreedsService _breedsService { get; set; }
-        public IPetVaccinesService _petVaccineService { get; set; }
+        public IVaccinesService _vaccineService { get; set; }
         public IUsersService _usersService { get; set; }
-        public PetController(IPetsService service, IMapper mapper, IPetTypeService _petTypeService, IBreedsService _breedsService, IPetVaccinesService _petVaccineService, IUsersService _usersService) : base(service, mapper)
+
+        public IPetVaccinesService _petVaccinesService { get; set; }
+        public PetController(IPetsService service, IMapper mapper, IPetTypeService _petTypeService, IBreedsService _breedsService, IVaccinesService _vaccineService, IUsersService _usersService, IPetVaccinesService _petVaccinesService) : base(service, mapper)
         {
 
             this._petTypeService = _petTypeService;
             this._breedsService = _breedsService;
-            this._petVaccineService = _petVaccineService;
+            this._vaccineService = _vaccineService;
             this._usersService = _usersService;
+            this._petVaccinesService = _petVaccinesService;
         }
 
 
@@ -89,7 +92,7 @@ namespace PetShelterMVC.Controllers
         protected async Task<PetVaccineEditVM> PrePopulateVMAsync(PetVaccineEditVM editVM)
         {
             editVM.PetList = (await _service.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
-            editVM.VaccineList = (await _petVaccineService.GetAllActiveAsync()).Select(x => new SelectListItem($"{x.Vaccine}", x.Id.ToString()));
+            editVM.VaccineList = (await _vaccineService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
 
             return editVM;
         }
@@ -104,7 +107,7 @@ namespace PetShelterMVC.Controllers
         {
             string loggedUsername = User.FindFirst(ClaimTypes.Name)?.Value;
             var user = await this._usersService.GetByUsernameAsync(loggedUsername);
-            await this._petVaccineService.VaccinatePetAsync(user.Id, editVM.PetId);
+            await this._petVaccinesService.VaccinatePetAsync(user.Id, editVM.PetId);
             return await List();
         }
 

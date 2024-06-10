@@ -34,15 +34,24 @@
             @Html.DisplayNameFor(model => model.PetTypeId)
         </dt>
         <dd>
-            @Html.ActionLink("Pet Details", "Details", "Pet", new { id = Model.PetTypeId })
+            @Html.ActionLink("Pet Details", "Details", "PetType", new { id = Model.PetTypeId })
         </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.BreedId)
         </dt>
         <dd>
-            @Html.ActionLink("Pet Details", "Details", "Breed", new { id = Model.BreedId })
+            @Html.ActionLink("Breed Details", "Details", "Breed", new { id = Model.BreedId })
         </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PetVaccines)
+        </dt>
+
+        <dd>
+                @Html.DisplayFor(model => model.PetVaccines)
+        </dd>
+
 
         <dt>
             @Html.DisplayNameFor(model => model.GiverId)

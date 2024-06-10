@@ -22,11 +22,13 @@ namespace PetShelterMVC.ViewModels
         public bool IsAdopted { get; set; }
 
         public bool IsEuthanized { get; set; }
-        [Required]
 
+        [DisplayName("Pet Type")]
+        [Required]
         public int PetTypeId { get; set; }
-        [Required]
 
+        [DisplayName("Breed")]
+        [Required]
         public int BreedId { get; set; }
        
         [Required]
