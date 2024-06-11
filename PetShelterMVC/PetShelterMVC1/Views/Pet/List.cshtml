@@ -62,11 +62,11 @@
                 @Html.ActionLink("Vaccine Pet", "VaccinatePet", new { id = item.Id }) |
                 @if (item.IsAdopted) 
                 {
-                    <span class="text-success">Кучето е осиновено</span>
+                    <span class="text-success">Животинката е осиновена</span>
                 }
                 else if(item.IsEuthanized)
                 {
-                    <span class="text-danger">Кучето е мъртво</span>
+                    <span class="text-danger">Животинката е мъртва</span>
                 }
                 else
                 {
