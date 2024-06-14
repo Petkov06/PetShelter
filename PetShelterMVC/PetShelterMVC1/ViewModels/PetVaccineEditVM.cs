@@ -16,8 +16,7 @@ namespace PetShelterMVC.ViewModels
         [Required]
         public int PetId { get; set; }
 
-        [Required]
-        public string Name { get; set; }
+       
         public IEnumerable<SelectListItem> PetList { get; set; }
         public IEnumerable<SelectListItem> VaccineList { get; set; }
 

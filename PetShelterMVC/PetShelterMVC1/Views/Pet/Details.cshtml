@@ -61,6 +61,7 @@
                         @foreach (var vaccine in Model.PetVaccines)
                         {
                             <tr>
+                              
                                 <td>@Html.DisplayFor(modelItem => vaccine.Vaccine.Name)</td>
                                 
                             </tr>
@@ -75,12 +76,7 @@
         </dd>
 
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GiverId)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.GiverId)
-        </dd>
+       
 
         @if (Model.IsAdopted)
         {
