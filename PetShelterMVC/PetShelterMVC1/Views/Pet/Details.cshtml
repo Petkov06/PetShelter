@@ -87,15 +87,18 @@
                 @Html.DisplayFor(model => model.IsAdopted)
             </dd>
         }
-        else
+        else if(Model.IsEuthanized)
         {
-
             <dt>
                 @Html.DisplayNameFor(model => model.IsEuthanized)
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.IsEuthanized)
             </dd>
+        }
+        else
+        {
+            
         }
 
 

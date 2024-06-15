@@ -6,7 +6,10 @@
 
 <h2>Pet Type</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @if (!User.IsInRole("User"))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
 </p>
 <table class="table">
     <tr>
@@ -26,12 +29,12 @@
             </td>
             
             <td>
-                @if (User.IsInRole("Admin"))
+                @if (!User.IsInRole("User"))
                 {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) @: |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }) @: |
                 }
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
             </td>
         </tr>
     }

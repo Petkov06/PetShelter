@@ -21,13 +21,27 @@
             @Html.DisplayFor(model => model.Size)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Pets)
-        </dt>
+        @if (Model.Pets != null && Model.Pets.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Животинки</th>
 
-        <dd>
-            @Html.DisplayFor(model => model.Pets)
-        </dd>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var pets in Model.Pets)
+                    {
+                        <tr>
+
+                            <td>@Html.DisplayFor(modelItem => pets.Name)</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
 
     </dl>
 </div>

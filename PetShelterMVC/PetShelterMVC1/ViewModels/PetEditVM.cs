@@ -46,6 +46,9 @@ namespace PetShelterMVC.ViewModels
 
         public IEnumerable<SelectListItem> BreedList { get; set; }
 
+        public IEnumerable<SelectListItem> UserList { get; set; }
+
+
 
     }
 }

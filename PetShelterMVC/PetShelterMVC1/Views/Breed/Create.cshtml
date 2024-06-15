@@ -26,7 +26,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Size, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Size)
+                @Html.DropDownListFor(model => model.Size, Model.BreedList, "Breed...",
+                         new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Size)
             </div>
         </div>

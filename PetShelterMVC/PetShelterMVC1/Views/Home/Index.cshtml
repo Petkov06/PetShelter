@@ -6,25 +6,37 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
 </div>
 
-@if (Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.User.ToString() )
-{
-<div class="pet-buttons">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="GivePet">Give Pet</a>
-    </button>
+<div class="" style="font-size: 18px ;text-transform: none ;">
+    <p>Our mission is to build a community of people and organizations working together to save today’s and prevent tomorrow’s, abused, neglected, and homeless animals.</p>
+    <p><strong>How we do this …….</strong></p>
+    <ol>
+        <li>Deliver the highest level of animal care to prepare today’s animals in need for their future homes.</li>
+        <li>Bring together the cats and dogs who need a loving family with the people who want them.</li>
+        <li>Provide community services and resources to ensure every animal has a safe and healthy life.</li>
+    </ol>
 </div>
-}
-
-@if (Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.User.ToString())
+@if (Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.Employee.ToString() ||
+                     Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.User.ToString() ||
+                     Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.Admin.ToString())
 {
     <div class="pet-buttons">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="GivePet">Give Pet</a>
+        </button>
+    </div>
+}
+@if (Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.Employee.ToString() ||
+                    Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.User.ToString() ||
+                    Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.Admin.ToString())
+{
+    <div class="pet-buttons">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="AdoptPet">Adopt Pet</a>
         </button>

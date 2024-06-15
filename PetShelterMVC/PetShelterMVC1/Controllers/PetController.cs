@@ -42,6 +42,8 @@ namespace PetShelterMVC.Controllers
 
             editVM.PetTypeList = (await _petTypeService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
             editVM.BreedList = (await _breedsService.GetAllAsync()).Select(x => new SelectListItem($"{x.Name}", x.Id.ToString()));
+            editVM.UserList = (await _usersService.GetAllAsync()).Select(x => new SelectListItem($"{x.FirstName} {x.LastName}", x.Id.ToString()));
+
 
             return editVM;
         }
@@ -111,9 +113,6 @@ namespace PetShelterMVC.Controllers
             return await List();
         }
 
-        //public async Task VaccinatePetAsync(PetVaccineEditVM editVM)
-        //{
-        //    await _petVaccineService.VaccinatePetAsync(editVM.PetId, editVM.VaccineId);
-        //}
+        
     }
 }
