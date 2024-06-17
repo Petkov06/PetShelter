@@ -1,0 +1,40 @@
+﻿*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%), 
+        linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%), 
+        linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+form{
+    width:24%;
+    background-color:white;
+    padding:50px;
+    border-radius:18px;
+    margin-top:150px;
+}
+.btn-primary {
+    width: 100%;
+    border: none;
+    border-radius: 50px;
+    margin-top: 150px;
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%), 
+        linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%), linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+
+.col-md-10 {
+    color: rgb(0, 0, 0);
+    border-bottom-color:black;
+    box-shadow: none !important;
+    border:none;
+    border-bottom:1px solid;
+    border-radius:4px 4px 0px 0px
+}
+h4{
+    font-size:2rem !important;
+    font-weight:700;
+
+}

@@ -1,44 +1,54 @@
-﻿@* *@
-@using PetShelterMVC.Controllers
+﻿@using PetShelterMVC.Controllers
 @using PetShelter.Shared.Extensions
 @model PetShelterMVC.ViewModels.LoginVm
 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="~/css/List.css" />
+
+</head>
 @{
     ViewBag.Title = "Login";
 }
+<body>
+@*     <h2>Login</h2>
+ *@    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="container-fluid">
+            <form class="mx-auto">
+                <h4 class="text-center">Login</h4>
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.Username, new { @class = "control-label col-md-2 " })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Username)
+                        @Html.ValidationMessageFor(model => model.Username)
 
-<h2>Login</h2>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true)
+                    </div>
+                </div>
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2 " })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Password)
+                        @Html.ValidationMessageFor(model => model.Password)
+                    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Username, new { @class = "control-label col-md-2 " })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Username)
-                @Html.ValidationMessageFor(model => model.Username)
-            </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary mt-4">Submit</button>
+            </form>
         </div>
+    }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2 " })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Password)
-                @Html.ValidationMessageFor(model => model.Password)
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Login" class="btn btn-default" />
-            </div>
-        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-        @* <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="ChangePassword">Forgot Password</a>
-        </li> *@
-    </div>
-}
+
+</body>
+
