@@ -1,44 +1,59 @@
 ﻿@using System.Security.Claims
 @using PetShelter.Shared.Enums
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="~/css/Home.css" />
+
+</head>
+
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    
-</div>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+    </div>
 
-<div class="" style="font-size: 18px ;text-transform: none ;">
-    <p>Our mission is to build a community of people and organizations working together to save today’s and prevent tomorrow’s, abused, neglected, and homeless animals.</p>
-    <p><strong>How we do this …….</strong></p>
-    <ol>
-        <li>Deliver the highest level of animal care to prepare today’s animals in need for their future homes.</li>
-        <li>Bring together the cats and dogs who need a loving family with the people who want them.</li>
-        <li>Provide community services and resources to ensure every animal has a safe and healthy life.</li>
-    </ol>
-</div>
-@if (Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.Employee.ToString() ||
-                     Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.User.ToString() ||
-                     Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.Admin.ToString())
-{
-    <div class="pet-buttons">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="GivePet">Give Pet</a>
-        </button>
+
+    <div class="text">
+        <p>Our mission is to build a community of people and organizations working together to save today’s and prevent tomorrow’s, abused, neglected, and homeless animals.</p>
+        <p><strong>How we do this …….</strong></p>
+        <ol>
+            <li>Deliver the highest level of animal care to prepare today’s animals in need for their future homes.</li>
+            <li>Bring together the cats and dogs who need a loving family with the people who want them.</li>
+            <li>Provide community services and resources to ensure every animal has a safe and healthy life.</li>
+        </ol>
+        
     </div>
-}
-@if (Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.Employee.ToString() ||
-                    Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.User.ToString() ||
-                    Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.Admin.ToString())
-{
-    <div class="pet-buttons">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            <a class="nav-link text-dark" asp-area="" asp-controller="Pet" asp-action="AdoptPet">Adopt Pet</a>
-        </button>
+    <hr />
+    <div class="pet-photo">
+        <img src="img/shelter.jpg" alt="pet" style="width:60%">
     </div>
-}
+    <hr />
+    @if (Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.Employee.ToString() ||
+    Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.User.ToString() ||
+    Context.User?.FindFirst(ClaimTypes.Role)?.Value == UserRole.Admin.ToString())
+    {
+        <div class="d-grid gap-2 d-md-block">
+            <a class="btn btn-primary me-2" href="@Url.Action("GivePet", "Pet")">Give Pet</a>
+            <a class="btn btn-secondary" href="@Url.Action("AdoptPet", "Pet")">Adopt Pet</a>
+        </div>
+    }
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</body>

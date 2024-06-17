@@ -1,0 +1,8 @@
+﻿.text{
+    font-size:22px;
+    font-family:'Times New Roman', Times, serif
+}
+.text:hover {
+    background-color: grey;
+    opacity: 1.5;
+}
