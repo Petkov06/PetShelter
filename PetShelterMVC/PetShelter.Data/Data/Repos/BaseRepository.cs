@@ -29,14 +29,17 @@ namespace PetShelter.Data.Data.Repos
             this.mapper = mapper;
         }
 
+        //entity -> model
         public virtual TModel MapToModel(T entity)
         {
             return mapper.Map<TModel>(entity);
         }
+        //model -> entity
         public virtual T MapToEntity(TModel model)
         {
             return mapper.Map<T>(model);
         }
+        //collection of entitites -> coll of model
         public virtual IEnumerable<TModel> MapToEnumerableOfModel(IEnumerable<T> entities)
         {
             return mapper.Map<IEnumerable<TModel>>(entities);

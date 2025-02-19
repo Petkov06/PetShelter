@@ -36,6 +36,7 @@ namespace PetShelterMVC.Controllers
             return Task.FromResult<string?>(null);
         }
 
+        //return completed VM
         protected virtual Task<TEditVM> PrePopulateVMAsync(TEditVM editVM)
         {
             return Task.FromResult(editVM);

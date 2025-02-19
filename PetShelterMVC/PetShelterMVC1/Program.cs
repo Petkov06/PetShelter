@@ -23,15 +23,10 @@ public class Program
         // Add services to the container.
         builder.Services.AddControllersWithViews();
 
-
-
-       
-
     builder.Services.AddDbContext<PetShelterDbContext>(options =>
         {
             options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"], r => r.UseRowNumberForPaging());
         });
-
        
 
         builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
